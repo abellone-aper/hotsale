@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--
+  TEMPLATE: Hot Sale Landing Page
+  ─────────────────────────────────────────────────────────────
+  Cómo personalizar esta página:
+    • COLORES / TIPOGRAFÍA  → styles.css, bloque :root (primeras líneas)
+    • TEXTOS / IMÁGENES     → este archivo (HTML), seguí los comentarios
+    • COUNTDOWN             → script.js, constante TARGET_DATE
+    • ADBAR (tira animada)  → script.js, array baseItems[]
+  ─────────────────────────────────────────────────────────────
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TEMPLATE: Cambiar título de la pestaña -->
+  <title>Hot Sale 2026 — Market by Personal</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Phosphor Icons — regular (calendar, adbar), fill (sociales, shield), bold (flechas carousel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HEADER
+     • Logo: cambiar src y alt
+     • Botón derecho: cambiar texto o quitar el elemento
+     ═══════════════════════════════════════════════════════════ -->
+<header class="header">
+  <div class="header-inner">
+    <img src="img/logo.png" class="header-logo" alt="Market by Personal">
+    <button class="header-btn">Ampliar el límite de tus tarjetas</button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ADBAR — Tira animada de beneficios
+     El contenido se genera desde script.js → baseItems[].
+     Para cambiar íconos y textos ir a script.js.
+     ═══════════════════════════════════════════════════════════ -->
+<div class="adbar">
+  <div class="adbar-track" id="adbarTrack"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     • Ícono de calendario: reemplazar el SVG si se necesita otro
+     • Fecha del evento: cambiar el texto en .hero-date-text
+     • Título: cambiar texto y <strong> para negrita
+     • CTA: cambiar texto del botón
+     • Imagen: cambiar src="img/hero.png"
+     ═══════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-content">
+        <div class="hero-date">
+          <!-- Ícono de calendario (decorativo) -->
+          <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+          <!-- TEMPLATE: Cambiar fechas del evento -->
+          <span class="hero-date-text">12, 13 y 14 de Mayo</span>
+        </div>
+        <!-- TEMPLATE: Cambiar título principal; usar <strong> para negrita -->
+        <p class="hero-title">Hasta <strong>65% de descuento</strong>, hasta 12 cuotas sin interés</p>
+        <!-- TEMPLATE: Cambiar texto del CTA -->
+        <button class="hero-cta">Comprar ahora</button>
+      </div>
+    </div>
+    <!-- TEMPLATE: Cambiar src con la imagen principal del hero -->
+    <div class="hero-right">
+      <img src="img/hero.png" alt="Hot Sale">
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     COUNTDOWN — Cuenta regresiva al evento
+     La fecha objetivo se configura en script.js → TARGET_DATE.
+     Los IDs cdDays, cdHours, cdMins, cdSecs son requeridos por el JS.
+     Solo cambiar las etiquetas de texto si es necesario.
+     ═══════════════════════════════════════════════════════════ -->
+<section class="countdown">
+  <!-- TEMPLATE: Cambiar texto descriptivo -->
+  <p class="countdown-text">Falta poco para el Hot Sale, preparate para los mejores descuentos y medios de pago</p>
+  <div class="countdown-units">
+    <div class="count-block">
+      <span class="count-num" id="cdDays">00</span>
+      <span class="count-label">días</span>
+    </div>
+    <div class="count-block">
+      <span class="count-num" id="cdHours">00</span>
+      <span class="count-label">horas</span>
+    </div>
+    <div class="count-block">
+      <span class="count-num" id="cdMins">00</span>
+      <span class="count-label">minutos</span>
+    </div>
+    <div class="count-block">
+      <span class="count-num" id="cdSecs">00</span>
+      <span class="count-label">segundos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     BANNERS PROMO — 2 banners de ancho completo
+     • Cambiar src de cada imagen (tamaño recomendado: 700×372px)
+     • Para agregar un tercer banner, duplicar un .promo-card
+     ═══════════════════════════════════════════════════════════ -->
+<div class="section section--no-top section--no-bottom">
+  <div class="promo-grid">
+    <div class="promo-card"><img src="img/banner1.png" alt="Banner 1"></div>
+    <div class="promo-card"><img src="img/banner2.png" alt="Banner 2"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CATEGORÍAS — Carousel horizontal
+     • Agregar/quitar .cat-card para cambiar las categorías
+     • Cambiar src de las imágenes (tamaño recomendado: 96×96px)
+     • Cambiar el texto en .cat-label
+     ═══════════════════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <!-- TEMPLATE: Cambiar título de la sección -->
+    <span class="section-title">Categorías</span>
+  </div>
+  <div class="carousel-wrap">
+    <button class="carousel-btn carousel-btn--prev" onclick="doScroll('cats', -290)" aria-label="Anterior">
+      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+    </button>
+    <div class="carousel-track scrollbar-hide" id="cats">
+      <!-- TEMPLATE: Duplicar o quitar .cat-card para cada categoría -->
+      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span class="cat-label">Smartphones</span></div>
+      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span class="cat-label">Indumentaria deportiva</span></div>
+      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span class="cat-label">Lavarropas</span></div>
+      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span class="cat-label">Televisores</span></div>
+      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span class="cat-label">Smartphones</span></div>
+      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span class="cat-label">Indumentaria deportiva</span></div>
+      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span class="cat-label">Lavarropas</span></div>
+      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span class="cat-label">Televisores</span></div>
+    </div>
+    <button class="carousel-btn" onclick="doScroll('cats', 290)" aria-label="Siguiente">
+      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CARD EDITORIAL / DESTACADO
+     Bloque con imagen a la izquierda y descripción + CTA a la derecha.
+     • Cambiar src="img/sports.png"
+     • Cambiar título, descripción y texto del botón
+     ═══════════════════════════════════════════════════════════ -->
+<div class="section section--no-top">
+  <div class="sports-card">
+    <!-- TEMPLATE: Cambiar imagen (recomendado: proporción 1:1 o 4:3) -->
+    <div class="sports-img"><img src="img/sports.png" alt="Deporte"></div>
+    <div class="sports-content">
+      <div>
+        <!-- TEMPLATE: Cambiar título y descripción -->
+        <p class="sports-title">Encontrá todos los artículos de deporte al mejor precio</p>
+        <p class="sports-desc">Más de 400 locales adheridos con ofertas exclusivas en indumentaria, calzado, accesorios y equipamiento deportivo.</p>
+      </div>
+      <!-- TEMPLATE: Cambiar texto del botón -->
+      <button class="sports-cta">Ver oferta</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TIENDAS OFICIALES — Carousel horizontal
+     • Agregar/quitar .store-card para cambiar las tiendas
+     • Cambiar src de los logos (tamaño recomendado: 136×64px, fondo blanco)
+     ═══════════════════════════════════════════════════════════ -->
+<div class="section section--no-top">
+  <div class="section-header">
+    <!-- TEMPLATE: Cambiar título y texto del link -->
+    <span class="section-title">Tiendas Oficiales</span>
+    <button class="section-link">Mostrar todo</button>
+  </div>
+  <div class="carousel-wrap">
+    <button class="carousel-btn carousel-btn--prev" onclick="doScroll('stores', -220)" aria-label="Anterior">
+      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+    </button>
+    <div class="carousel-track scrollbar-hide" id="stores">
+      <!-- TEMPLATE: Duplicar o quitar .store-card para cada tienda -->
+      <div class="store-card"><img src="img/store1.png" alt="Tienda 1"></div>
+      <div class="store-card"><img src="img/store2.png" alt="Tienda 2"></div>
+      <div class="store-card"><img src="img/store3.png" alt="Tienda 3"></div>
+      <div class="store-card"><img src="img/store4.png" alt="Tienda 4"></div>
+      <div class="store-card"><img src="img/store5.png" alt="Tienda 5"></div>
+      <div class="store-card"><img src="img/store6.png" alt="Tienda 6"></div>
+    </div>
+    <button class="carousel-btn" onclick="doScroll('stores', 220)" aria-label="Siguiente">
+      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     BANNERS DE DESCUENTO — 3 banners (ej. cuotas, bancos)
+     • Cambiar src de cada imagen (tamaño recomendado: 460×372px)
+     • Para usar 2 banners, quitar un .discount-card
+     ═══════════════════════════════════════════════════════════ -->
+<div class="section section--no-top section--bottom-lg">
+  <div class="discount-grid">
+    <div class="discount-card"><img src="img/promo1.png" alt="Promo 1"></div>
+    <div class="discount-card"><img src="img/promo2.png" alt="Promo 2"></div>
+    <div class="discount-card"><img src="img/promo3.png" alt="Promo 3"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     • Logo: cambiar src (mismo logo que header)
+     • Redes sociales: los .social-btn son decorativos; agregar href si corresponde
+     • Columna "Tienda Clic": cambiar datos de contacto
+     • Columnas de links: cambiar textos y atributos href
+     • Trust badge: cambiar título y descripción
+     • Botón de arrepentimiento: requerido por ley; cambiar URL de destino
+     ═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+
+    <!-- Logo + Redes sociales -->
+    <div class="footer-col footer-col--logo">
+      <div class="footer-logo-wrap">
+        <!-- TEMPLATE: Mismo logo que el header -->
+        <img src="img/logo.png" class="footer-logo" alt="Market by Personal">
+      </div>
+      <!-- TEMPLATE: Agregar href a cada .social-btn según corresponda -->
+      <div class="footer-socials">
+        <div class="social-btn" aria-label="Facebook">
+          <i class="ph-fill ph-facebook-logo" aria-hidden="true"></i>
+        </div>
+        <div class="social-btn" aria-label="Instagram">
+          <i class="ph-fill ph-instagram-logo" aria-hidden="true"></i>
+        </div>
+        <div class="social-btn" aria-label="X / Twitter">
+          <i class="ph-fill ph-x-logo" aria-hidden="true"></i>
+        </div>
+        <div class="social-btn" aria-label="WhatsApp">
+          <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+        </div>
+        <div class="social-btn" aria-label="YouTube">
+          <i class="ph-fill ph-youtube-logo" aria-hidden="true"></i>
+        </div>
+        <div class="social-btn" aria-label="LinkedIn">
+          <i class="ph-fill ph-linkedin-logo" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEMPLATE: Cambiar nombre, email, dirección y teléfono -->
+    <div class="footer-col">
+      <p class="footer-col-title">Tienda Clic</p>
+      <div class="footer-col-links">
+        <span>Info@tiendaclic.com</span>
+        <span>Av. Olazábal 1515, CABA,<br>Argentina</span>
+        <span>011 4783-4364</span>
+      </div>
+    </div>
+
+    <!-- TEMPLATE: Cambiar textos y href de los links de ayuda -->
+    <div class="footer-col">
+      <p class="footer-col-title">Ayuda</p>
+      <div class="footer-col-links">
+        <a href="#">Contacto</a>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Políticas de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+      </div>
+    </div>
+
+    <!-- TEMPLATE: Cambiar textos y href de los links de atajos -->
+    <div class="footer-col">
+      <p class="footer-col-title">Atajos</p>
+      <div class="footer-col-links">
+        <a href="#">Pedidos</a>
+        <a href="#">Tiendas Oficiales</a>
+        <a href="#">Favoritos</a>
+      </div>
+    </div>
+
+    <!-- Trust badge + Botón de arrepentimiento -->
+    <div class="footer-col footer-col--trust">
+      <div class="trust-box">
+        <div class="trust-shield">
+          <i class="ph ph-shield" aria-hidden="true"></i>
+        </div>
+        <div>
+          <!-- TEMPLATE: Cambiar título y descripción del trust badge -->
+          <span class="footer-col-title trust-badge">Tienda Oficial</span>
+          <p class="trust-text">Compras seguras, con el respaldo de tu banco</p>
+        </div>
+      </div>
+      <!-- TEMPLATE: Apuntar al formulario/página de arrepentimiento -->
+      <button class="btn-regret">Botón de arrepentimiento</button>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
