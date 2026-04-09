@@ -185,7 +185,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 .section--no-bottom { padding-bottom: 0; }
 .section--bottom-lg { padding-bottom: 40px; }
 
-.section-header { display: flex; align-items: flex-end; gap: 12px; margin-bottom: 16px; }
+.section-header { display: flex; align-items: flex-end; gap: 12px; margin-bottom: 24px; }
 .section-title  { font-weight: 600; font-size: 24px; color: var(--color-text); line-height: 24px; letter-spacing: 0.048px; }
 .section-link   { color: var(--color-primary); font-weight: 500; font-size: 16px; background: none; }
 .section-link:hover { text-decoration: underline; }
@@ -278,7 +278,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 footer        { background: var(--color-footer-bg); color: var(--color-bg); width: 100%; }
 .footer-inner {
   display: flex;
-  gap: 40px;
+  gap: 32px;
   justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
@@ -393,5 +393,5 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
   /* Footer: columna única; trust badge sube al principio */
   .footer-inner       { flex-direction: column; flex-wrap: nowrap; padding: 40px 16px; }
   .footer-col--logo   { width: auto; }
-  .footer-col--trust  { margin-left: 0; order: -1; }
+  .footer-col--trust  { margin-left: 0; order: -1; flex: none; width: 100%; max-width: none; }
 }

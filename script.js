@@ -35,7 +35,7 @@ const baseItems = [
 function createAdbarItem({ icon, text }) {
   const el = document.createElement('span');
   el.className = 'adbar-item';
-  el.innerHTML = `<i class="ph-fill ${iconClass[icon]}" aria-hidden="true"></i><span>${text}</span>`;
+  el.innerHTML = `<i class="ph ${iconClass[icon]}" aria-hidden="true"></i><span>${text}</span>`;
   return el;
 }
 
