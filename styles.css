@@ -9,7 +9,6 @@
   /* -- Colores de marca ------------------------------------ */
   --color-primary:       #0076c7;  /* botones principales, links, íconos */
   --color-primary-hover: #005fa3;  /* hover de botones primarios */
-  --color-accent:        #499dd7;  /* link secundario del header */
 
   /* -- Colores de UI -------------------------------------- */
   --color-text:          #222;
@@ -25,6 +24,10 @@
   --color-footer-social: #4c4f5d;
   --color-trust-bg:      #303030;
   --color-trust-shield:  #7c7b7f;
+  --color-white:         #fff;
+  --color-cat-label:     #000;
+  --color-footer-link-hover: #ccc;
+  --shadow-card:         0 4px 12px rgba(0,0,0,.1);
 
   /* -- Tipografía ----------------------------------------- */
   /* Para usar una fuente externa (ej. Google Fonts), agregá el
@@ -78,7 +81,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
   margin: 0 auto;
 }
 .header-logo  { height: 48px; width: 113px; object-fit: contain; object-position: left; }
-.header-btn   { background: none; color: var(--color-accent); font-size: 16px; font-weight: 500; }
+.header-btn   { background: none; color: var(--color-white); font-size: 16px; font-weight: 500; }
 .header-btn:hover { text-decoration: underline; }
 
 
@@ -122,7 +125,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 .hero-title        { color: var(--color-text); font-size: 42px; line-height: 1.15; }
 .hero-title strong { font-weight: 600; }
 
-.hero-cta       { background: var(--color-primary); color: var(--color-bg); padding: 12px 24px; border-radius: var(--radius-btn); font-weight: 500; font-size: 16px; width: fit-content; transition: background .2s; }
+.hero-cta       { background: var(--color-primary); color: var(--color-bg); padding: 12px 24px; border-radius: var(--radius-btn); font-weight: 500; font-size: 16px; width: fit-content; transition: background .2s; display: inline-block; }
 .hero-cta:hover { background: var(--color-primary-hover); }
 
 /* La imagen ocupa todo el espacio del contenedor con posición absoluta */
@@ -138,8 +141,8 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 .hero-date i    { font-size: 22px; color: var(--color-text); flex-shrink: 0; }
 .adbar-item i   { font-size: 22px; color: var(--color-primary); flex-shrink: 0; }
 .carousel-btn i { font-size: 14px; color: var(--color-primary); }
-.social-btn i   { font-size: 18px; color: #fff; }
-.trust-shield i { font-size: 26px; color: #fff; }
+.social-btn i   { font-size: 18px; color: var(--color-white); }
+.trust-shield i { font-size: 26px; color: var(--color-white); }
 
 
 /* ============================================================
@@ -199,7 +202,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 .promo-grid { display: flex; gap: 18px; }
 .promo-card         { flex: 1; position: relative; border-radius: var(--radius-banner); overflow: hidden; height: 372px; cursor: pointer; }
 .promo-card img     { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
-.promo-card:hover img { transform: scale(1.04); }
+@media (hover: hover) { .promo-card:hover img { transform: scale(1.04); } }
 
 
 /* ============================================================
@@ -227,10 +230,10 @@ button  { cursor: pointer; border: none; font-family: inherit; }
    Agregar/quitar .cat-card en el HTML para cambiar categorías.
    ============================================================ */
 .cat-card       { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-card); display: flex; align-items: center; overflow: hidden; cursor: pointer; flex-shrink: 0; width: 270px; transition: box-shadow .2s; }
-.cat-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+@media (hover: hover) { .cat-card:hover { box-shadow: var(--shadow-card); } }
 .cat-img-wrap   { position: relative; width: 96px; height: 96px; flex-shrink: 0; border-right: 1px solid var(--color-border-light); }
 .cat-img-wrap img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-.cat-label      { padding: 0 16px; font-weight: 500; font-size: 16px; color: #000; }
+.cat-label      { padding: 0 16px; font-weight: 500; font-size: 16px; color: var(--color-cat-label); }
 
 
 /* ============================================================
@@ -244,7 +247,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 .sports-content { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 24px; padding: 32px; }
 .sports-title   { color: var(--color-text); font-weight: 600; font-size: 24px; line-height: 1.3; max-width: 499px; }
 .sports-desc    { color: var(--color-text-muted); font-size: 18px; line-height: 20px; max-width: 499px; margin-top: 12px; }
-.sports-cta       { background: var(--color-primary); color: var(--color-bg); height: 48px; padding: 0 16px; border-radius: var(--radius-btn); font-weight: 500; font-size: 16px; width: fit-content; transition: background .2s; }
+.sports-cta       { background: var(--color-primary); color: var(--color-bg); height: 48px; padding: 0 16px; border-radius: var(--radius-btn); font-weight: 500; font-size: 16px; width: fit-content; transition: background .2s; display: inline-flex; align-items: center; }
 .sports-cta:hover { background: var(--color-primary-hover); }
 
 
@@ -254,7 +257,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
    Agregar/quitar .store-card en el HTML para cambiar tiendas.
    ============================================================ */
 .store-card       { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-card); display: flex; align-items: center; justify-content: center; padding: 20px; min-width: 176px; height: 136px; flex-shrink: 0; cursor: pointer; transition: box-shadow .2s; }
-.store-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+@media (hover: hover) { .store-card:hover { box-shadow: var(--shadow-card); } }
 .store-card img   { max-height: 72px; width: 100%; object-fit: contain; }
 
 
@@ -266,7 +269,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 .discount-grid { display: flex; gap: 16px; height: 372px; }
 .discount-card           { flex: 1; position: relative; border-radius: var(--radius-banner); overflow: hidden; cursor: pointer; }
 .discount-card img       { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
-.discount-card:hover img { transform: scale(1.04); }
+@media (hover: hover) { .discount-card:hover img { transform: scale(1.04); } }
 
 
 /* ============================================================
@@ -278,7 +281,6 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 footer        { background: var(--color-footer-bg); color: var(--color-bg); width: 100%; }
 .footer-inner {
   display: flex;
-  gap: 32px;
   justify-content: space-between;
   max-width: 1440px;
   margin: 0 auto;
@@ -291,7 +293,7 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
 .footer-col--logo  { max-width: 220px; flex-shrink: 0; }
 
 /* Columna del trust badge */
-.footer-col--trust { flex: 0 0 220px; min-width: 0; max-width: 260px; }
+.footer-col--trust { flex: 0 0 270px; min-width: 0; max-width: 310px; }
 
 /* Íconos de redes sociales */
 .footer-socials   { display: flex; flex-wrap: wrap; gap: 16px; }
@@ -300,9 +302,10 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
 
 /* Columnas de links */
 .footer-col       { display: flex; flex-direction: column; gap: 8px; }
+.footer-col-group { display: flex; gap: 80px; }
 .footer-col-title { font-weight: 600; font-size: 16px; line-height: 20px; }
 .footer-col-links { display: flex; flex-direction: column; gap: 16px; margin-top: 8px; font-size: 15px; line-height: 22px; }
-.footer-col-links a:hover { color: #ccc; }
+.footer-col-links a:hover { color: var(--color-footer-link-hover); }
 
 /* Trust box */
 .trust-box     { background: var(--color-trust-bg); border-radius: var(--radius-banner); padding: 16px; display: flex; gap: 12px; align-items: center; }
@@ -311,7 +314,7 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
 .trust-text    { font-size: 14px; color: var(--color-bg); line-height: 20px; }
 
 /* Botón de arrepentimiento (obligatorio por ley argentina) */
-.btn-regret       { background: var(--color-primary); color: var(--color-bg); font-size: 15px; font-weight: 500; height: 44px; padding: 0 16px; border-radius: var(--radius-btn); width: 100%; margin-top: 18px; transition: background .2s; }
+.btn-regret       { background: var(--color-primary); color: var(--color-bg); font-size: 15px; font-weight: 500; height: 44px; padding: 0 16px; border-radius: var(--radius-btn); width: 100%; margin-top: 18px; transition: background .2s; display: flex; align-items: center; justify-content: center; }
 .btn-regret:hover { background: var(--color-primary-hover); }
 
 
@@ -394,4 +397,5 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
   .footer-inner       { flex-direction: column; flex-wrap: nowrap; padding: 40px 16px; }
   .footer-col--logo   { width: auto; }
   .footer-col--trust  { margin-left: 0; order: -1; flex: none; width: 100%; max-width: none; }
+  .footer-col-group   { flex-direction: column; gap: 32px; }
 }

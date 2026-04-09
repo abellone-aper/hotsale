@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
+  <script src="links.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -23,7 +24,7 @@
 <header class="header">
   <div class="header-inner">
     <img src="img/logo.png" class="header-logo" alt="Market by Personal">
-    <button class="header-btn">Ampliar el límite de tus tarjetas</button>
+    <a data-link="ingresar" href="#" class="header-btn">Ingresar</a>
   </div>
 </header>
 
@@ -57,7 +58,7 @@
         <!-- TEMPLATE: Cambiar título principal; usar <strong> para negrita -->
         <p class="hero-title">Hasta <strong>65% de descuento</strong>, hasta 12 cuotas sin interés</p>
         <!-- TEMPLATE: Cambiar texto del CTA -->
-        <button class="hero-cta">Comprar ahora</button>
+        <a data-link="comprar-ahora" href="#" class="hero-cta">Comprar ahora</a>
       </div>
     </div>
     <!-- TEMPLATE: Cambiar src con la imagen principal del hero -->
@@ -103,8 +104,8 @@
      ═══════════════════════════════════════════════════════════ -->
 <div class="section section--no-top section--no-bottom">
   <div class="promo-grid">
-    <div class="promo-card"><img src="img/banner1.png" alt="Banner 1"></div>
-    <div class="promo-card"><img src="img/banner2.png" alt="Banner 2"></div>
+    <a data-link="banner-1" href="#" class="promo-card"><img src="img/banner1.png" alt="Banner 1"></a>
+    <a data-link="banner-2" href="#" class="promo-card"><img src="img/banner2.png" alt="Banner 2"></a>
   </div>
 </div>
 
@@ -125,14 +126,14 @@
     </button>
     <div class="carousel-track scrollbar-hide" id="cats">
       <!-- TEMPLATE: Duplicar o quitar .cat-card para cada categoría -->
-      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span class="cat-label">Smartphones</span></div>
-      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span class="cat-label">Indumentaria deportiva</span></div>
-      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span class="cat-label">Lavarropas</span></div>
-      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span class="cat-label">Televisores</span></div>
-      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span class="cat-label">Smartphones</span></div>
-      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span class="cat-label">Indumentaria deportiva</span></div>
-      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span class="cat-label">Lavarropas</span></div>
-      <div class="cat-card"><div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span class="cat-label">Televisores</span></div>
+      <a data-link="cat-smartphones" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span class="cat-label">Smartphones</span></a>
+      <a data-link="cat-deportiva" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span class="cat-label">Indumentaria deportiva</span></a>
+      <a data-link="cat-lavarropas" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span class="cat-label">Lavarropas</span></a>
+      <a data-link="cat-televisores" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span class="cat-label">Televisores</span></a>
+      <a data-link="cat-smartphones" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span class="cat-label">Smartphones</span></a>
+      <a data-link="cat-deportiva" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span class="cat-label">Indumentaria deportiva</span></a>
+      <a data-link="cat-lavarropas" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span class="cat-label">Lavarropas</span></a>
+      <a data-link="cat-televisores" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span class="cat-label">Televisores</span></a>
     </div>
     <button class="carousel-btn" onclick="doScroll('cats', 290)" aria-label="Siguiente">
       <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
@@ -157,7 +158,7 @@
         <p class="sports-desc">Más de 400 locales adheridos con ofertas exclusivas en indumentaria, calzado, accesorios y equipamiento deportivo.</p>
       </div>
       <!-- TEMPLATE: Cambiar texto del botón -->
-      <button class="sports-cta">Ver oferta</button>
+      <a data-link="ver-oferta" href="#" class="sports-cta">Ver oferta</a>
     </div>
   </div>
 </div>
@@ -171,7 +172,7 @@
   <div class="section-header">
     <!-- TEMPLATE: Cambiar título y texto del link -->
     <span class="section-title">Tiendas Oficiales</span>
-    <button class="section-link">Mostrar todo</button>
+    <a data-link="mostrar-todo" href="#" class="section-link">Mostrar todo</a>
   </div>
   <div class="carousel-wrap">
     <button class="carousel-btn carousel-btn--prev" onclick="doScroll('stores', -220)" aria-label="Anterior">
@@ -179,12 +180,12 @@
     </button>
     <div class="carousel-track scrollbar-hide" id="stores">
       <!-- TEMPLATE: Duplicar o quitar .store-card para cada tienda -->
-      <div class="store-card"><img src="img/store1.png" alt="Tienda 1"></div>
-      <div class="store-card"><img src="img/store2.png" alt="Tienda 2"></div>
-      <div class="store-card"><img src="img/store3.png" alt="Tienda 3"></div>
-      <div class="store-card"><img src="img/store4.png" alt="Tienda 4"></div>
-      <div class="store-card"><img src="img/store5.png" alt="Tienda 5"></div>
-      <div class="store-card"><img src="img/store6.png" alt="Tienda 6"></div>
+      <a data-link="tienda-1" href="#" class="store-card"><img src="img/store1.png" alt="Tienda 1"></a>
+      <a data-link="tienda-2" href="#" class="store-card"><img src="img/store2.png" alt="Tienda 2"></a>
+      <a data-link="tienda-3" href="#" class="store-card"><img src="img/store3.png" alt="Tienda 3"></a>
+      <a data-link="tienda-4" href="#" class="store-card"><img src="img/store4.png" alt="Tienda 4"></a>
+      <a data-link="tienda-5" href="#" class="store-card"><img src="img/store5.png" alt="Tienda 5"></a>
+      <a data-link="tienda-6" href="#" class="store-card"><img src="img/store6.png" alt="Tienda 6"></a>
     </div>
     <button class="carousel-btn" onclick="doScroll('stores', 220)" aria-label="Siguiente">
       <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
@@ -199,20 +200,18 @@
      ═══════════════════════════════════════════════════════════ -->
 <div class="section section--no-top section--bottom-lg">
   <div class="discount-grid">
-    <div class="discount-card"><img src="img/promo1.png" alt="Promo 1"></div>
-    <div class="discount-card"><img src="img/promo2.png" alt="Promo 2"></div>
-    <div class="discount-card"><img src="img/promo3.png" alt="Promo 3"></div>
+    <a data-link="promo-1" href="#" class="discount-card"><img src="img/promo1.png" alt="Promo 1"></a>
+    <a data-link="promo-2" href="#" class="discount-card"><img src="img/promo2.png" alt="Promo 2"></a>
+    <a data-link="promo-3" href="#" class="discount-card"><img src="img/promo3.png" alt="Promo 3"></a>
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
      FOOTER
      • Logo: cambiar src (mismo logo que header)
-     • Redes sociales: los .social-btn son decorativos; agregar href si corresponde
-     • Columna "Tienda Clic": cambiar datos de contacto
-     • Columnas de links: cambiar textos y atributos href
+     • Columnas de links: cambiar textos en links.js
      • Trust badge: cambiar título y descripción
-     • Botón de arrepentimiento: requerido por ley; cambiar URL de destino
+     • Botón de arrepentimiento: requerido por ley; cambiar URL en links.js
      ═══════════════════════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
@@ -223,57 +222,45 @@
         <!-- TEMPLATE: Mismo logo que el header -->
         <img src="img/logo.png" class="footer-logo" alt="Market by Personal">
       </div>
-      <!-- TEMPLATE: Agregar href a cada .social-btn según corresponda -->
       <div class="footer-socials">
-        <div class="social-btn" aria-label="Facebook">
+        <a data-link="facebook" href="#" class="social-btn" aria-label="Facebook">
           <i class="ph-fill ph-facebook-logo" aria-hidden="true"></i>
-        </div>
-        <div class="social-btn" aria-label="Instagram">
+        </a>
+        <a data-link="instagram" href="#" class="social-btn" aria-label="Instagram">
           <i class="ph-fill ph-instagram-logo" aria-hidden="true"></i>
-        </div>
-        <div class="social-btn" aria-label="X / Twitter">
+        </a>
+        <a data-link="twitter" href="#" class="social-btn" aria-label="X / Twitter">
           <i class="ph-fill ph-x-logo" aria-hidden="true"></i>
-        </div>
-        <div class="social-btn" aria-label="WhatsApp">
+        </a>
+        <a data-link="whatsapp" href="#" class="social-btn" aria-label="WhatsApp">
           <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-        </div>
-        <div class="social-btn" aria-label="YouTube">
+        </a>
+        <a data-link="youtube" href="#" class="social-btn" aria-label="YouTube">
           <i class="ph-fill ph-youtube-logo" aria-hidden="true"></i>
-        </div>
-        <div class="social-btn" aria-label="LinkedIn">
+        </a>
+        <a data-link="linkedin" href="#" class="social-btn" aria-label="LinkedIn">
           <i class="ph-fill ph-linkedin-logo" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- TEMPLATE: Cambiar textos y URLs en links.js -->
+    <div class="footer-col-group">
+      <div class="footer-col">
+        <p class="footer-col-title">Ayuda</p>
+        <div class="footer-col-links">
+          <a data-link="privacidad" href="#">Política de privacidad</a>
+          <a data-link="faq" href="#">Preguntas Frecuentes</a>
+          <a data-link="terminos" href="#">Términos y condiciones</a>
+          <a data-link="datos-personales" href="#">Protección de datos personales</a>
+          <a data-link="consumidor" href="#">Defensa del Consumidor</a>
         </div>
       </div>
-    </div>
-
-    <!-- TEMPLATE: Cambiar nombre, email, dirección y teléfono -->
-    <div class="footer-col">
-      <p class="footer-col-title">Tienda Clic</p>
-      <div class="footer-col-links">
-        <span>Info@tiendaclic.com</span>
-        <span>Av. Olazábal 1515, CABA,<br>Argentina</span>
-        <span>011 4783-4364</span>
-      </div>
-    </div>
-
-    <!-- TEMPLATE: Cambiar textos y href de los links de ayuda -->
-    <div class="footer-col">
-      <p class="footer-col-title">Ayuda</p>
-      <div class="footer-col-links">
-        <a href="#">Contacto</a>
-        <a href="#">Preguntas frecuentes</a>
-        <a href="#">Políticas de privacidad</a>
-        <a href="#">Términos y condiciones</a>
-      </div>
-    </div>
-
-    <!-- TEMPLATE: Cambiar textos y href de los links de atajos -->
-    <div class="footer-col">
-      <p class="footer-col-title">Atajos</p>
-      <div class="footer-col-links">
-        <a href="#">Pedidos</a>
-        <a href="#">Tiendas Oficiales</a>
-        <a href="#">Favoritos</a>
+      <div class="footer-col">
+        <p class="footer-col-title">Accesos directos</p>
+        <div class="footer-col-links">
+          <a data-link="pedidos" href="#">Pedidos</a>
+        </div>
       </div>
     </div>
 
@@ -289,8 +276,8 @@
           <p class="trust-text">Compras seguras, con el respaldo de tu banco</p>
         </div>
       </div>
-      <!-- TEMPLATE: Apuntar al formulario/página de arrepentimiento -->
-      <button class="btn-regret">Botón de arrepentimiento</button>
+      <!-- TEMPLATE: URL configurada en links.js → 'arrepentimiento' -->
+      <a data-link="arrepentimiento" href="#" class="btn-regret">Botón de arrepentimiento</a>
     </div>
 
   </div>

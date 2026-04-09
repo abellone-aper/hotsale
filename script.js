@@ -75,13 +75,37 @@ function doScroll(id, amount) {
 document.querySelectorAll('.carousel-wrap').forEach(wrap => {
   const track   = wrap.querySelector('.carousel-track');
   const prevBtn = wrap.querySelector('.carousel-btn--prev');
-  if (!track || !prevBtn) return;
+  if (!track) return;
 
-  prevBtn.classList.add('carousel-btn--hidden');
+  if (prevBtn) {
+    prevBtn.classList.add('carousel-btn--hidden');
+    track.addEventListener('scroll', () => {
+      prevBtn.classList.toggle('carousel-btn--hidden', track.scrollLeft <= 0);
+    }, { passive: true });
+  }
 
-  track.addEventListener('scroll', () => {
-    prevBtn.classList.toggle('carousel-btn--hidden', track.scrollLeft <= 0);
-  }, { passive: true });
+  /* Drag-to-scroll en desktop */
+  let isDragging = false, startX = 0, scrollStart = 0;
+
+  track.addEventListener('mousedown', e => {
+    isDragging = true;
+    startX = e.pageX;
+    scrollStart = track.scrollLeft;
+    track.style.cursor = 'grabbing';
+    track.style.userSelect = 'none';
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    track.scrollLeft = scrollStart - (e.pageX - startX);
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.cursor = '';
+    track.style.userSelect = '';
+  });
 });
 
 
