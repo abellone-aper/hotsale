@@ -22,6 +22,13 @@ const LINKS = {
   'cat-lavarropas':    '#',
   'cat-televisores':   '#',
 
+  /* Productos — Carrusel de smart TVs */
+  'ver-todos-productos': '#',   // Link "Ver todo" del carrusel de productos
+  'producto-1':          '#',   // Smart TV 50" Google TV 4K
+  'producto-2':          '#',   // Smart TV Philco 40" FHD Android TV
+  'producto-3':          '#',   // Smart TV Qüint 50" UHD 4K Smart
+  'producto-4':          '#',   // Smart TV Samsung 55" Crystal UHD 4K
+
   /* Card editorial de deporte */
   'ver-oferta':        'https://market.personal.com.ar/172-deportes',
 

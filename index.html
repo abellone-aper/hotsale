@@ -142,6 +142,157 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
+     PRODUCTOS — Carousel horizontal
+     • Agregar/quitar .prod-card para cambiar los productos
+     • Cambiar badge, precio, cuotas, nombre y vendedor de cada tarjeta
+     ═══════════════════════════════════════════════════════════ -->
+<div class="section section--no-top">
+  <div class="section-header">
+    <!-- TEMPLATE: Cambiar título y texto del link -->
+    <span class="section-title">Renová tu smart TV</span>
+  </div>
+  <div class="carousel-wrap">
+    <button class="carousel-btn carousel-btn--prev" onclick="doScroll('products', -290)" aria-label="Anterior">
+      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+    </button>
+    <div class="carousel-track scrollbar-hide" id="products">
+
+      <!-- TEMPLATE: Duplicar o quitar .prod-card para cada producto -->
+
+      <!-- Producto 1: Smart TV 50" Google TV 4K -->
+      <a data-link="producto-1" href="#" class="prod-card">
+        <div class="prod-img-wrap"><img src="img/prod1.jpg" alt="Smart TV 50 Pulgadas Google TV 4K"></div>
+        <span class="prod-badge">Con Visa y Master</span>
+        <div class="prod-body">
+          <p class="prod-price">$899.999</p>
+          <p class="prod-installments">Mismo precio en 6 cuotas de $149.999,83</p>
+          <p class="prod-shipping">Envío Gratis</p>
+          <p class="prod-name">Smart Tv 50 Pulgadas Google Tv 4k Led Hdmi Usb</p>
+          <p class="prod-seller">Vendida por <span class="prod-seller-name">Ceven</span></p>
+          <p class="prod-tax">Precio sin impuestos nacionales $743.800,83</p>
+        </div>
+      </a>
+
+      <!-- Producto 2: Philco 40" FHD Android TV -->
+      <a data-link="producto-2" href="#" class="prod-card">
+        <div class="prod-img-wrap"><img src="img/prod2.jpeg" alt="Smart TV Philco 40 FHD Android TV"></div>
+        <span class="prod-badge">Con Visa y Master</span>
+        <div class="prod-body">
+          <p class="prod-price">$419.999</p>
+          <p class="prod-installments">Mismo precio en 6 cuotas de $69.999,83</p>
+          <p class="prod-shipping">Envío Gratis</p>
+          <p class="prod-name">Smart Tv Philco 40 Pulgadas FHD Android TV Netflix</p>
+          <p class="prod-seller">Vendida por <span class="prod-seller-name">Philco Store</span></p>
+          <p class="prod-tax">Precio sin impuestos nacionales $347.107,44</p>
+        </div>
+      </a>
+
+      <!-- Producto 3: Qüint 50" UHD 4K Smart -->
+      <a data-link="producto-3" href="#" class="prod-card">
+        <div class="prod-img-wrap"><img src="img/prod3.webp" alt="Smart TV Qüint 50 UHD 4K Smart"></div>
+        <span class="prod-badge">Con Visa y Master</span>
+        <div class="prod-body">
+          <p class="prod-original">$833.332,22</p>
+          <div class="prod-price-row">
+            <p class="prod-price">$749.999</p>
+            <span class="prod-discount">10% OFF</span>
+          </div>
+          <p class="prod-installments">Mismo precio en 12 cuotas de $62.499,92</p>
+          <p class="prod-shipping">Envío Gratis</p>
+          <p class="prod-name">Smart Tv Qüint 50" UHD 4K Smart Google TV</p>
+          <p class="prod-seller">Vendida por <span class="prod-seller-name">Qüint Oficial</span></p>
+          <p class="prod-tax">Precio sin impuestos nacionales $619.834,71</p>
+        </div>
+      </a>
+
+      <!-- Producto 4: Samsung 55" Crystal UHD 4K -->
+      <a data-link="producto-4" href="#" class="prod-card">
+        <div class="prod-img-wrap"><img src="img/prod4.webp" alt="Smart TV Samsung 55 Crystal UHD 4K"></div>
+        <span class="prod-badge">Con Visa y Master</span>
+        <div class="prod-body">
+          <div class="prod-price-row">
+            <p class="prod-price">$1.299.999</p>
+            <span class="prod-discount">15% OFF</span>
+          </div>
+          <p class="prod-original">$1.529.410,59</p>
+          <p class="prod-installments">Mismo precio en 12 cuotas de $108.333,25</p>
+          <p class="prod-shipping">Envío Gratis</p>
+          <p class="prod-name">Smart Tv Samsung 55" Crystal UHD 4K Procesador Crystal 4K</p>
+          <p class="prod-seller">Vendida por <span class="prod-seller-name">Samsung Store</span></p>
+          <p class="prod-tax">Precio sin impuestos nacionales $1.074.379,34</p>
+        </div>
+      </a>
+
+      <!-- Repetición -->
+
+      <a data-link="producto-1" href="#" class="prod-card">
+        <div class="prod-img-wrap"><img src="img/prod1.jpg" alt="Smart TV 50 Pulgadas Google TV 4K"></div>
+        <span class="prod-badge">Con Visa y Master</span>
+        <div class="prod-body">
+          <p class="prod-price">$899.999</p>
+          <p class="prod-installments">Mismo precio en 6 cuotas de $149.999,83</p>
+          <p class="prod-shipping">Envío Gratis</p>
+          <p class="prod-name">Smart Tv 50 Pulgadas Google Tv 4k Led Hdmi Usb</p>
+          <p class="prod-seller">Vendida por <span class="prod-seller-name">Ceven</span></p>
+          <p class="prod-tax">Precio sin impuestos nacionales $743.800,83</p>
+        </div>
+      </a>
+
+      <a data-link="producto-2" href="#" class="prod-card">
+        <div class="prod-img-wrap"><img src="img/prod2.jpeg" alt="Smart TV Philco 40 FHD Android TV"></div>
+        <span class="prod-badge">Con Visa y Master</span>
+        <div class="prod-body">
+          <p class="prod-price">$419.999</p>
+          <p class="prod-installments">Mismo precio en 6 cuotas de $69.999,83</p>
+          <p class="prod-shipping">Envío Gratis</p>
+          <p class="prod-name">Smart Tv Philco 40 Pulgadas FHD Android TV Netflix</p>
+          <p class="prod-seller">Vendida por <span class="prod-seller-name">Philco Store</span></p>
+          <p class="prod-tax">Precio sin impuestos nacionales $347.107,44</p>
+        </div>
+      </a>
+
+      <a data-link="producto-3" href="#" class="prod-card">
+        <div class="prod-img-wrap"><img src="img/prod3.webp" alt="Smart TV Qüint 50 UHD 4K Smart"></div>
+        <span class="prod-badge">Con Visa y Master</span>
+        <div class="prod-body">
+          <p class="prod-original">$833.332,22</p>
+          <div class="prod-price-row">
+            <p class="prod-price">$749.999</p>
+            <span class="prod-discount">10% OFF</span>
+          </div>
+          <p class="prod-installments">Mismo precio en 12 cuotas de $62.499,92</p>
+          <p class="prod-shipping">Envío Gratis</p>
+          <p class="prod-name">Smart Tv Qüint 50" UHD 4K Smart Google TV</p>
+          <p class="prod-seller">Vendida por <span class="prod-seller-name">Qüint Oficial</span></p>
+          <p class="prod-tax">Precio sin impuestos nacionales $619.834,71</p>
+        </div>
+      </a>
+
+      <a data-link="producto-4" href="#" class="prod-card">
+        <div class="prod-img-wrap"><img src="img/prod4.webp" alt="Smart TV Samsung 55 Crystal UHD 4K"></div>
+        <span class="prod-badge">Con Visa y Master</span>
+        <div class="prod-body">
+          <div class="prod-price-row">
+            <p class="prod-price">$1.299.999</p>
+            <span class="prod-discount">15% OFF</span>
+          </div>
+          <p class="prod-original">$1.529.410,59</p>
+          <p class="prod-installments">Mismo precio en 12 cuotas de $108.333,25</p>
+          <p class="prod-shipping">Envío Gratis</p>
+          <p class="prod-name">Smart Tv Samsung 55" Crystal UHD 4K Procesador Crystal 4K</p>
+          <p class="prod-seller">Vendida por <span class="prod-seller-name">Samsung Store</span></p>
+          <p class="prod-tax">Precio sin impuestos nacionales $1.074.379,34</p>
+        </div>
+      </a>
+
+    </div>
+    <button class="carousel-btn" onclick="doScroll('products', 290)" aria-label="Siguiente">
+      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
      CARD EDITORIAL / DESTACADO
      Bloque con imagen a la izquierda y descripción + CTA a la derecha.
      • Cambiar src="img/sports.png"

@@ -79,32 +79,49 @@ document.querySelectorAll('.carousel-wrap').forEach(wrap => {
 
   if (prevBtn) {
     prevBtn.classList.add('carousel-btn--hidden');
-    track.addEventListener('scroll', () => {
-      prevBtn.classList.toggle('carousel-btn--hidden', track.scrollLeft <= 0);
-    }, { passive: true });
   }
+  track.addEventListener('scroll', () => {
+    const scrolled = track.scrollLeft > 0;
+    const atEnd    = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    if (prevBtn) prevBtn.classList.toggle('carousel-btn--hidden', !scrolled);
+    wrap.classList.toggle('is-scrolled', scrolled);
+    wrap.classList.toggle('is-scrolled-end', atEnd);
+  }, { passive: true });
 
   /* Drag-to-scroll en desktop */
-  let isDragging = false, startX = 0, scrollStart = 0;
+  let isDown = false, hasDragged = false, startX = 0, scrollStart = 0;
+
+  /* Evita el drag nativo del browser sobre links e imágenes */
+  track.addEventListener('dragstart', e => e.preventDefault());
 
   track.addEventListener('mousedown', e => {
-    isDragging = true;
-    startX = e.pageX;
+    if (e.button !== 0) return;
+    isDown      = true;
+    hasDragged  = false;
+    startX      = e.pageX;
     scrollStart = track.scrollLeft;
-    track.style.cursor = 'grabbing';
-    track.style.userSelect = 'none';
   });
 
   document.addEventListener('mousemove', e => {
-    if (!isDragging) return;
-    track.scrollLeft = scrollStart - (e.pageX - startX);
+    if (!isDown) return;
+    const delta = e.pageX - startX;
+    if (!hasDragged && Math.abs(delta) < 5) return; // umbral: ignora micro-movimientos
+    hasDragged = true;
+    track.style.cursor    = 'grabbing';
+    track.style.userSelect = 'none';
+    track.scrollLeft = scrollStart - delta;
   });
 
   document.addEventListener('mouseup', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    track.style.cursor = '';
+    if (!isDown) return;
+    isDown = false;
+    track.style.cursor    = '';
     track.style.userSelect = '';
+  });
+
+  /* Cancela el click si el usuario arrastró (evita navegar accidentalmente) */
+  track.addEventListener('click', e => {
+    if (hasDragged) e.preventDefault();
   });
 });
 
