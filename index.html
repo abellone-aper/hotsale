@@ -1,438 +1,452 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- TEMPLATE: Cambiar título de la pestaña -->
+  <!-- Título de la pestaña -->
   <title>Hot Sale 2026 — Market by Personal</title>
   <link rel="icon" href="favicon.ico">
+
+  <!-- ═══════════════════════════════════════════════════════════
+     SEO & OPEN GRAPH
+     ═══════════════════════════════════════════════════════════ -->
+  <meta name="description" content="[Descripción breve de la tienda y la promoción. Máx. 155 caracteres.]">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://abellone-aper.github.io/hotsale/">
+  <meta property="og:title"       content="Hot Sale 2026 — Market by Personal">
+  <meta property="og:description" content="Hasta 65% de descuento y hasta 12 cuotas sin interés. Hot Sale 2026 — 12, 13 y 14 de Mayo en Market by Personal.">
+  <meta property="og:image"       content="img/banner1.png">
+
+
   <link rel="stylesheet" href="styles.css">
-  <!-- Phosphor Icons — regular (calendar, adbar), fill (sociales, shield), bold (flechas carousel) -->
+  <!-- Phosphor Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css">
   <script src="links.js" defer></script>
   <script src="script.js" defer></script>
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════
      HEADER
-     • Logo: cambiar src y alt
-     • Botón derecho: cambiar texto o quitar el elemento
      ═══════════════════════════════════════════════════════════ -->
-<header class="header">
-  <div class="header-inner">
-    <img src="img/logo.png" class="header-logo" alt="Market by Personal">
-    <a data-link="ingresar" href="#" class="header-btn">Ingresar</a>
+  <header class="header">
+    <div class="header-inner">
+      <a data-link="logo"><img src="img/logo.png" class="header-logo" alt="Market by Personal"></a>
+      <a data-link="ingresar" href="#" class="header-btn">Ingresar</a>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+    BENEFICIOS
+     ═══════════════════════════════════════════════════════════ -->
+  <div class="adbar">
+    <div class="adbar-track" id="adbarTrack"></div>
   </div>
-</header>
 
-<!-- ═══════════════════════════════════════════════════════════
-     ADBAR — Tira animada de beneficios
-     El contenido se genera desde script.js → baseItems[].
-     Para cambiar íconos y textos ir a script.js.
-     ═══════════════════════════════════════════════════════════ -->
-<div class="adbar">
-  <div class="adbar-track" id="adbarTrack"></div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════
      HERO
-     • Ícono de calendario: reemplazar el SVG si se necesita otro
-     • Fecha del evento: cambiar el texto en .hero-date-text
-     • Título: cambiar texto y <strong> para negrita
-     • CTA: cambiar texto del botón
-     • Imagen: cambiar src="img/hero.png"
      ═══════════════════════════════════════════════════════════ -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-content">
-        <div class="hero-date">
-          <!-- Ícono de calendario (decorativo) -->
-          <i class="ph ph-calendar-blank" aria-hidden="true"></i>
-          <!-- TEMPLATE: Cambiar fechas del evento -->
-          <span class="hero-date-text">12, 13 y 14 de Mayo</span>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-content">
+          <div class="hero-date">
+            <i class="ph ph-calendar-blank" aria-hidden="true"></i>
+            <!-- Fechas del evento -->
+            <span class="hero-date-text">12, 13 y 14 de Mayo</span>
+          </div>
+          <!-- Título principal -->
+          <p class="hero-title">Hasta <strong>65% de descuento</strong>, hasta 12 cuotas sin interés</p>
+          <!-- Hero CTA -->
+          <a data-link="comprar-ahora" href="#" class="hero-cta">Comprar ahora</a>
         </div>
-        <!-- TEMPLATE: Cambiar título principal; usar <strong> para negrita -->
-        <p class="hero-title">Hasta <strong>65% de descuento</strong>, hasta 12 cuotas sin interés</p>
-        <!-- TEMPLATE: Cambiar texto del CTA -->
-        <a data-link="comprar-ahora" href="#" class="hero-cta">Comprar ahora</a>
+      </div>
+      <!-- HERO IMAGE -->
+      <div class="hero-right">
+        <img src="img/hero.png" alt="Hot Sale">
       </div>
     </div>
-    <!-- TEMPLATE: Cambiar src con la imagen principal del hero -->
-    <div class="hero-right">
-      <img src="img/hero.png" alt="Hot Sale">
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════════════════════
      COUNTDOWN — Cuenta regresiva al evento
-     La fecha objetivo se configura en script.js → TARGET_DATE.
-     Los IDs cdDays, cdHours, cdMins, cdSecs son requeridos por el JS.
-     Solo cambiar las etiquetas de texto si es necesario.
      ═══════════════════════════════════════════════════════════ -->
-<section class="countdown">
-  <!-- TEMPLATE: Cambiar texto descriptivo -->
-  <p class="countdown-text">Falta poco para el Hot Sale, preparate para los mejores descuentos y medios de pago</p>
-  <div class="countdown-units">
-    <div class="count-block">
-      <span class="count-num" id="cdDays">00</span>
-      <span class="count-label">días</span>
+  <section class="countdown">
+    <!-- Texto descriptivo -->
+    <p class="countdown-text">Falta poco para el Hot Sale, preparate para los mejores descuentos y medios de pago</p>
+    <div class="countdown-units">
+      <div class="count-block">
+        <span class="count-num" id="cdDays">00</span>
+        <span class="count-label">días</span>
+      </div>
+      <div class="count-block">
+        <span class="count-num" id="cdHours">00</span>
+        <span class="count-label">horas</span>
+      </div>
+      <div class="count-block">
+        <span class="count-num" id="cdMins">00</span>
+        <span class="count-label">minutos</span>
+      </div>
+      <div class="count-block">
+        <span class="count-num" id="cdSecs">00</span>
+        <span class="count-label">segundos</span>
+      </div>
     </div>
-    <div class="count-block">
-      <span class="count-num" id="cdHours">00</span>
-      <span class="count-label">horas</span>
-    </div>
-    <div class="count-block">
-      <span class="count-num" id="cdMins">00</span>
-      <span class="count-label">minutos</span>
-    </div>
-    <div class="count-block">
-      <span class="count-num" id="cdSecs">00</span>
-      <span class="count-label">segundos</span>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     BANNERS PROMO — 2 banners de ancho completo
-     • Cambiar src de cada imagen (tamaño recomendado: 700×372px)
-     • Para agregar un tercer banner, duplicar un .promo-card
+  <!-- ═══════════════════════════════════════════════════════════
+     BANNERS
      ═══════════════════════════════════════════════════════════ -->
-<div class="section section--no-top section--no-bottom">
-  <div class="promo-grid">
-    <a data-link="banner-1" href="#" class="promo-card"><img src="img/banner1.png" alt="Banner 1"></a>
-    <a data-link="banner-2" href="#" class="promo-card"><img src="img/banner2.png" alt="Banner 2"></a>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     CATEGORÍAS — Carousel horizontal
-     • Agregar/quitar .cat-card para cambiar las categorías
-     • Cambiar src de las imágenes (tamaño recomendado: 96×96px)
-     • Cambiar el texto en .cat-label
-     ═══════════════════════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-header">
-    <!-- TEMPLATE: Cambiar título de la sección -->
-    <span class="section-title">Categorías</span>
-  </div>
-  <div class="carousel-wrap">
-    <button class="carousel-btn carousel-btn--prev" onclick="doScroll('cats', -290)" aria-label="Anterior">
-      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
-    </button>
-    <div class="carousel-track scrollbar-hide" id="cats">
-      <!-- TEMPLATE: Duplicar o quitar .cat-card para cada categoría -->
-      <a data-link="cat-smartphones" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span class="cat-label">Smartphones</span></a>
-      <a data-link="cat-deportiva" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span class="cat-label">Indumentaria deportiva</span></a>
-      <a data-link="cat-lavarropas" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span class="cat-label">Lavarropas</span></a>
-      <a data-link="cat-televisores" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span class="cat-label">Televisores</span></a>
-      <a data-link="cat-smartphones" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span class="cat-label">Smartphones</span></a>
-      <a data-link="cat-deportiva" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span class="cat-label">Indumentaria deportiva</span></a>
-      <a data-link="cat-lavarropas" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span class="cat-label">Lavarropas</span></a>
-      <a data-link="cat-televisores" href="#" class="cat-card"><div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span class="cat-label">Televisores</span></a>
+  <div class="section section--no-top section--no-bottom">
+    <div class="promo-grid">
+      <a data-link="banner-1" href="#" class="promo-card"><img src="img/banner1.png" alt="Banner 1"></a>
+      <a data-link="banner-2" href="#" class="promo-card"><img src="img/banner2.png" alt="Banner 2"></a>
     </div>
-    <button class="carousel-btn" onclick="doScroll('cats', 290)" aria-label="Siguiente">
-      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
-    </button>
   </div>
-</div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     PRODUCTOS — Carousel horizontal
-     • Agregar/quitar .prod-card para cambiar los productos
-     • Cambiar badge, precio, cuotas, nombre y vendedor de cada tarjeta
+  <!-- ═══════════════════════════════════════════════════════════
+     CATEGORÍAS
      ═══════════════════════════════════════════════════════════ -->
-<div class="section section--no-top">
-  <div class="section-header">
-    <!-- TEMPLATE: Cambiar título y texto del link -->
-    <span class="section-title">Renová tu smart TV</span>
+  <div class="section">
+    <div class="section-header">
+      <!-- Título de la sección -->
+      <span class="section-title">Categorías</span>
+    </div>
+    <div class="carousel-wrap">
+      <button class="carousel-btn carousel-btn--prev" onclick="doScroll('cats', -290)" aria-label="Anterior">
+        <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+      </button>
+      <div class="carousel-track scrollbar-hide" id="cats">
+        <!-- Categorías -->
+        <a data-link="cat-smartphones" href="#" class="cat-card">
+          <div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span
+            class="cat-label">Smartphones</span>
+        </a>
+        <a data-link="cat-deportiva" href="#" class="cat-card">
+          <div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span
+            class="cat-label">Indumentaria deportiva</span>
+        </a>
+        <a data-link="cat-lavarropas" href="#" class="cat-card">
+          <div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span
+            class="cat-label">Lavarropas</span>
+        </a>
+        <a data-link="cat-televisores" href="#" class="cat-card">
+          <div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span
+            class="cat-label">Televisores</span>
+        </a>
+        <a data-link="cat-smartphones" href="#" class="cat-card">
+          <div class="cat-img-wrap"><img src="img/cat1.png" alt="Smartphones"></div><span
+            class="cat-label">Smartphones</span>
+        </a>
+        <a data-link="cat-deportiva" href="#" class="cat-card">
+          <div class="cat-img-wrap"><img src="img/cat2.png" alt="Indumentaria deportiva"></div><span
+            class="cat-label">Indumentaria deportiva</span>
+        </a>
+        <a data-link="cat-lavarropas" href="#" class="cat-card">
+          <div class="cat-img-wrap"><img src="img/cat3.png" alt="Lavarropas"></div><span
+            class="cat-label">Lavarropas</span>
+        </a>
+        <a data-link="cat-televisores" href="#" class="cat-card">
+          <div class="cat-img-wrap"><img src="img/cat4.png" alt="Televisores"></div><span
+            class="cat-label">Televisores</span>
+        </a>
+      </div>
+      <button class="carousel-btn" onclick="doScroll('cats', 290)" aria-label="Siguiente">
+        <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+      </button>
+    </div>
   </div>
-  <div class="carousel-wrap">
-    <button class="carousel-btn carousel-btn--prev" onclick="doScroll('products', -290)" aria-label="Anterior">
-      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
-    </button>
-    <div class="carousel-track scrollbar-hide" id="products">
 
-      <!-- TEMPLATE: Duplicar o quitar .prod-card para cada producto -->
+  <!-- ═══════════════════════════════════════════════════════════
+     PRODUCTOS — Carousel 
+     ═══════════════════════════════════════════════════════════ -->
+  <div class="section section--no-top">
+    <div class="section-header">
+      <!-- Título -->
+      <span class="section-title">Renová tu smart TV</span>
+    </div>
+    <div class="carousel-wrap">
+      <button class="carousel-btn carousel-btn--prev" onclick="doScroll('products', -290)" aria-label="Anterior">
+        <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+      </button>
+      <div class="carousel-track scrollbar-hide" id="products">
 
-      <!-- Producto 1: Smart TV 50" Google TV 4K -->
-      <a data-link="producto-1" href="#" class="prod-card">
-        <div class="prod-img-wrap"><img src="img/prod1.jpg" alt="Smart TV 50 Pulgadas Google TV 4K"></div>
-        <span class="prod-badge">Con Visa y Master</span>
-        <div class="prod-body">
-          <p class="prod-price">$899.999</p>
-          <p class="prod-installments">Mismo precio en 6 cuotas de $149.999,83</p>
-          <p class="prod-shipping">Envío Gratis</p>
-          <p class="prod-name">Smart Tv 50 Pulgadas Google Tv 4k Led Hdmi Usb</p>
-          <p class="prod-seller">Vendida por <span class="prod-seller-name">Ceven</span></p>
-          <p class="prod-tax">Precio sin impuestos nacionales $743.800,83</p>
-        </div>
-      </a>
+        <!-- PRODUCTOS -->
 
-      <!-- Producto 2: Philco 40" FHD Android TV -->
-      <a data-link="producto-2" href="#" class="prod-card">
-        <div class="prod-img-wrap"><img src="img/prod2.jpeg" alt="Smart TV Philco 40 FHD Android TV"></div>
-        <span class="prod-badge">Con Visa y Master</span>
-        <div class="prod-body">
-          <p class="prod-price">$419.999</p>
-          <p class="prod-installments">Mismo precio en 6 cuotas de $69.999,83</p>
-          <p class="prod-shipping">Envío Gratis</p>
-          <p class="prod-name">Smart Tv Philco 40 Pulgadas FHD Android TV Netflix</p>
-          <p class="prod-seller">Vendida por <span class="prod-seller-name">Philco Store</span></p>
-          <p class="prod-tax">Precio sin impuestos nacionales $347.107,44</p>
-        </div>
-      </a>
-
-      <!-- Producto 3: Qüint 50" UHD 4K Smart -->
-      <a data-link="producto-3" href="#" class="prod-card">
-        <div class="prod-img-wrap"><img src="img/prod3.webp" alt="Smart TV Qüint 50 UHD 4K Smart"></div>
-        <span class="prod-badge">Con Visa y Master</span>
-        <div class="prod-body">
-          <p class="prod-original">$833.332,22</p>
-          <div class="prod-price-row">
-            <p class="prod-price">$749.999</p>
-            <span class="prod-discount">10% OFF</span>
+        <!-- Producto 1 -->
+        <a data-link="producto-1" href="#" class="prod-card">
+          <div class="prod-img-wrap"><img src="img/prod1.jpg" alt="Smart TV 50 Pulgadas Google TV 4K"></div>
+          <span class="prod-badge">Con Visa y Master</span>
+          <div class="prod-body">
+            <p class="prod-price">$899.999</p>
+            <p class="prod-installments">Mismo precio en 6 cuotas de $149.999,83</p>
+            <p class="prod-shipping">Envío Gratis</p>
+            <p class="prod-name">Smart Tv 50 Pulgadas Google Tv 4k Led Hdmi Usb</p>
+            <p class="prod-seller">Vendida por <span class="prod-seller-name">Ceven</span></p>
+            <p class="prod-tax">Precio sin impuestos nacionales $743.800,83</p>
           </div>
-          <p class="prod-installments">Mismo precio en 12 cuotas de $62.499,92</p>
-          <p class="prod-shipping">Envío Gratis</p>
-          <p class="prod-name">Smart Tv Qüint 50" UHD 4K Smart Google TV</p>
-          <p class="prod-seller">Vendida por <span class="prod-seller-name">Qüint Oficial</span></p>
-          <p class="prod-tax">Precio sin impuestos nacionales $619.834,71</p>
-        </div>
-      </a>
+        </a>
 
-      <!-- Producto 4: Samsung 55" Crystal UHD 4K -->
-      <a data-link="producto-4" href="#" class="prod-card">
-        <div class="prod-img-wrap"><img src="img/prod4.webp" alt="Smart TV Samsung 55 Crystal UHD 4K"></div>
-        <span class="prod-badge">Con Visa y Master</span>
-        <div class="prod-body">
-          <div class="prod-price-row">
-            <p class="prod-price">$1.299.999</p>
-            <span class="prod-discount">15% OFF</span>
+        <!-- Producto 2 -->
+        <a data-link="producto-2" href="#" class="prod-card">
+          <div class="prod-img-wrap"><img src="img/prod2.jpeg" alt="Smart TV Philco 40 FHD Android TV"></div>
+          <span class="prod-badge">Con Visa y Master</span>
+          <div class="prod-body">
+            <p class="prod-price">$419.999</p>
+            <p class="prod-installments">Mismo precio en 6 cuotas de $69.999,83</p>
+            <p class="prod-shipping">Envío Gratis</p>
+            <p class="prod-name">Smart Tv Philco 40 Pulgadas FHD Android TV Netflix</p>
+            <p class="prod-seller">Vendida por <span class="prod-seller-name">Philco Store</span></p>
+            <p class="prod-tax">Precio sin impuestos nacionales $347.107,44</p>
           </div>
-          <p class="prod-original">$1.529.410,59</p>
-          <p class="prod-installments">Mismo precio en 12 cuotas de $108.333,25</p>
-          <p class="prod-shipping">Envío Gratis</p>
-          <p class="prod-name">Smart Tv Samsung 55" Crystal UHD 4K Procesador Crystal 4K</p>
-          <p class="prod-seller">Vendida por <span class="prod-seller-name">Samsung Store</span></p>
-          <p class="prod-tax">Precio sin impuestos nacionales $1.074.379,34</p>
-        </div>
-      </a>
+        </a>
 
-      <!-- Repetición -->
-
-      <a data-link="producto-1" href="#" class="prod-card">
-        <div class="prod-img-wrap"><img src="img/prod1.jpg" alt="Smart TV 50 Pulgadas Google TV 4K"></div>
-        <span class="prod-badge">Con Visa y Master</span>
-        <div class="prod-body">
-          <p class="prod-price">$899.999</p>
-          <p class="prod-installments">Mismo precio en 6 cuotas de $149.999,83</p>
-          <p class="prod-shipping">Envío Gratis</p>
-          <p class="prod-name">Smart Tv 50 Pulgadas Google Tv 4k Led Hdmi Usb</p>
-          <p class="prod-seller">Vendida por <span class="prod-seller-name">Ceven</span></p>
-          <p class="prod-tax">Precio sin impuestos nacionales $743.800,83</p>
-        </div>
-      </a>
-
-      <a data-link="producto-2" href="#" class="prod-card">
-        <div class="prod-img-wrap"><img src="img/prod2.jpeg" alt="Smart TV Philco 40 FHD Android TV"></div>
-        <span class="prod-badge">Con Visa y Master</span>
-        <div class="prod-body">
-          <p class="prod-price">$419.999</p>
-          <p class="prod-installments">Mismo precio en 6 cuotas de $69.999,83</p>
-          <p class="prod-shipping">Envío Gratis</p>
-          <p class="prod-name">Smart Tv Philco 40 Pulgadas FHD Android TV Netflix</p>
-          <p class="prod-seller">Vendida por <span class="prod-seller-name">Philco Store</span></p>
-          <p class="prod-tax">Precio sin impuestos nacionales $347.107,44</p>
-        </div>
-      </a>
-
-      <a data-link="producto-3" href="#" class="prod-card">
-        <div class="prod-img-wrap"><img src="img/prod3.webp" alt="Smart TV Qüint 50 UHD 4K Smart"></div>
-        <span class="prod-badge">Con Visa y Master</span>
-        <div class="prod-body">
-          <p class="prod-original">$833.332,22</p>
-          <div class="prod-price-row">
-            <p class="prod-price">$749.999</p>
-            <span class="prod-discount">10% OFF</span>
+        <!-- Producto 3 -->
+        <a data-link="producto-3" href="#" class="prod-card">
+          <div class="prod-img-wrap"><img src="img/prod3.webp" alt="Smart TV Qüint 50 UHD 4K Smart"></div>
+          <span class="prod-badge">Con Visa y Master</span>
+          <div class="prod-body">
+            <p class="prod-original">$833.332,22</p>
+            <div class="prod-price-row">
+              <p class="prod-price">$749.999</p>
+              <span class="prod-discount">10% OFF</span>
+            </div>
+            <p class="prod-installments">Mismo precio en 12 cuotas de $62.499,92</p>
+            <p class="prod-shipping">Envío Gratis</p>
+            <p class="prod-name">Smart Tv Qüint 50" UHD 4K Smart Google TV</p>
+            <p class="prod-seller">Vendida por <span class="prod-seller-name">Qüint Oficial</span></p>
+            <p class="prod-tax">Precio sin impuestos nacionales $619.834,71</p>
           </div>
-          <p class="prod-installments">Mismo precio en 12 cuotas de $62.499,92</p>
-          <p class="prod-shipping">Envío Gratis</p>
-          <p class="prod-name">Smart Tv Qüint 50" UHD 4K Smart Google TV</p>
-          <p class="prod-seller">Vendida por <span class="prod-seller-name">Qüint Oficial</span></p>
-          <p class="prod-tax">Precio sin impuestos nacionales $619.834,71</p>
-        </div>
-      </a>
+        </a>
 
-      <a data-link="producto-4" href="#" class="prod-card">
-        <div class="prod-img-wrap"><img src="img/prod4.webp" alt="Smart TV Samsung 55 Crystal UHD 4K"></div>
-        <span class="prod-badge">Con Visa y Master</span>
-        <div class="prod-body">
-          <div class="prod-price-row">
-            <p class="prod-price">$1.299.999</p>
-            <span class="prod-discount">15% OFF</span>
+        <!-- Producto 4 -->
+        <a data-link="producto-4" href="#" class="prod-card">
+          <div class="prod-img-wrap"><img src="img/prod4.webp" alt="Smart TV Samsung 55 Crystal UHD 4K"></div>
+          <span class="prod-badge">Con Visa y Master</span>
+          <div class="prod-body">
+            <div class="prod-price-row">
+              <p class="prod-price">$1.299.999</p>
+              <span class="prod-discount">15% OFF</span>
+            </div>
+            <p class="prod-original">$1.529.410,59</p>
+            <p class="prod-installments">Mismo precio en 12 cuotas de $108.333,25</p>
+            <p class="prod-shipping">Envío Gratis</p>
+            <p class="prod-name">Smart Tv Samsung 55" Crystal UHD 4K Procesador Crystal 4K</p>
+            <p class="prod-seller">Vendida por <span class="prod-seller-name">Samsung Store</span></p>
+            <p class="prod-tax">Precio sin impuestos nacionales $1.074.379,34</p>
           </div>
-          <p class="prod-original">$1.529.410,59</p>
-          <p class="prod-installments">Mismo precio en 12 cuotas de $108.333,25</p>
-          <p class="prod-shipping">Envío Gratis</p>
-          <p class="prod-name">Smart Tv Samsung 55" Crystal UHD 4K Procesador Crystal 4K</p>
-          <p class="prod-seller">Vendida por <span class="prod-seller-name">Samsung Store</span></p>
-          <p class="prod-tax">Precio sin impuestos nacionales $1.074.379,34</p>
-        </div>
-      </a>
+        </a>
 
+        <!-- Producto 5 -->
+
+        <a data-link="producto-5" href="#" class="prod-card">
+          <div class="prod-img-wrap"><img src="img/prod1.jpg" alt="Smart TV 50 Pulgadas Google TV 4K"></div>
+          <span class="prod-badge">Con Visa y Master</span>
+          <div class="prod-body">
+            <p class="prod-price">$899.999</p>
+            <p class="prod-installments">Mismo precio en 6 cuotas de $149.999,83</p>
+            <p class="prod-shipping">Envío Gratis</p>
+            <p class="prod-name">Smart Tv 50 Pulgadas Google Tv 4k Led Hdmi Usb</p>
+            <p class="prod-seller">Vendida por <span class="prod-seller-name">Ceven</span></p>
+            <p class="prod-tax">Precio sin impuestos nacionales $743.800,83</p>
+          </div>
+        </a>
+
+        <!-- Producto 6 -->
+
+        <a data-link="producto-6" href="#" class="prod-card">
+          <div class="prod-img-wrap"><img src="img/prod2.jpeg" alt="Smart TV Philco 40 FHD Android TV"></div>
+          <span class="prod-badge">Con Visa y Master</span>
+          <div class="prod-body">
+            <p class="prod-price">$419.999</p>
+            <p class="prod-installments">Mismo precio en 6 cuotas de $69.999,83</p>
+            <p class="prod-shipping">Envío Gratis</p>
+            <p class="prod-name">Smart Tv Philco 40 Pulgadas FHD Android TV Netflix</p>
+            <p class="prod-seller">Vendida por <span class="prod-seller-name">Philco Store</span></p>
+            <p class="prod-tax">Precio sin impuestos nacionales $347.107,44</p>
+          </div>
+        </a>
+
+        <!-- Producto 7 -->
+
+        <a data-link="producto-7" href="#" class="prod-card">
+          <div class="prod-img-wrap"><img src="img/prod3.webp" alt="Smart TV Qüint 50 UHD 4K Smart"></div>
+          <span class="prod-badge">Con Visa y Master</span>
+          <div class="prod-body">
+            <p class="prod-original">$833.332,22</p>
+            <div class="prod-price-row">
+              <p class="prod-price">$749.999</p>
+              <span class="prod-discount">10% OFF</span>
+            </div>
+            <p class="prod-installments">Mismo precio en 12 cuotas de $62.499,92</p>
+            <p class="prod-shipping">Envío Gratis</p>
+            <p class="prod-name">Smart Tv Qüint 50" UHD 4K Smart Google TV</p>
+            <p class="prod-seller">Vendida por <span class="prod-seller-name">Qüint Oficial</span></p>
+            <p class="prod-tax">Precio sin impuestos nacionales $619.834,71</p>
+          </div>
+        </a>
+
+        <!-- Producto 8 -->
+
+        <a data-link="producto-8" href="#" class="prod-card">
+          <div class="prod-img-wrap"><img src="img/prod4.webp" alt="Smart TV Samsung 55 Crystal UHD 4K"></div>
+          <span class="prod-badge">Con Visa y Master</span>
+          <div class="prod-body">
+            <div class="prod-price-row">
+              <p class="prod-price">$1.299.999</p>
+              <span class="prod-discount">15% OFF</span>
+            </div>
+            <p class="prod-original">$1.529.410,59</p>
+            <p class="prod-installments">Mismo precio en 12 cuotas de $108.333,25</p>
+            <p class="prod-shipping">Envío Gratis</p>
+            <p class="prod-name">Smart Tv Samsung 55" Crystal UHD 4K Procesador Crystal 4K</p>
+            <p class="prod-seller">Vendida por <span class="prod-seller-name">Samsung Store</span></p>
+            <p class="prod-tax">Precio sin impuestos nacionales $1.074.379,34</p>
+          </div>
+        </a>
+
+      </div>
+      <button class="carousel-btn" onclick="doScroll('products', 290)" aria-label="Siguiente">
+        <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+      </button>
     </div>
-    <button class="carousel-btn" onclick="doScroll('products', 290)" aria-label="Siguiente">
-      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
-    </button>
   </div>
-</div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     CARD EDITORIAL / DESTACADO
-     Bloque con imagen a la izquierda y descripción + CTA a la derecha.
-     • Cambiar src="img/sports.png"
-     • Cambiar título, descripción y texto del botón
+  <!-- ═══════════════════════════════════════════════════════════
+     DESTACADO
      ═══════════════════════════════════════════════════════════ -->
-<div class="section section--no-top">
-  <div class="sports-card">
-    <!-- TEMPLATE: Cambiar imagen (recomendado: proporción 1:1 o 4:3) -->
-    <div class="sports-img"><img src="img/sports.png" alt="Deporte"></div>
-    <div class="sports-content">
-      <div>
-        <!-- TEMPLATE: Cambiar título y descripción -->
-        <p class="sports-title">Encontrá todos los artículos de deporte al mejor precio</p>
-        <p class="sports-desc">Más de 400 locales adheridos con ofertas exclusivas en indumentaria, calzado, accesorios y equipamiento deportivo.</p>
-      </div>
-      <!-- TEMPLATE: Cambiar texto del botón -->
-      <a data-link="ver-oferta" href="#" class="sports-cta">Ver oferta</a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     TIENDAS OFICIALES — Carousel horizontal
-     • Agregar/quitar .store-card para cambiar las tiendas
-     • Cambiar src de los logos (tamaño recomendado: 136×64px, fondo blanco)
-     ═══════════════════════════════════════════════════════════ -->
-<div class="section section--no-top">
-  <div class="section-header">
-    <!-- TEMPLATE: Cambiar título y texto del link -->
-    <span class="section-title">Tiendas Oficiales</span>
-    <a data-link="mostrar-todo" href="#" class="section-link">Mostrar todo</a>
-  </div>
-  <div class="carousel-wrap">
-    <button class="carousel-btn carousel-btn--prev" onclick="doScroll('stores', -220)" aria-label="Anterior">
-      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
-    </button>
-    <div class="carousel-track scrollbar-hide" id="stores">
-      <!-- TEMPLATE: Duplicar o quitar .store-card para cada tienda -->
-      <a data-link="tienda-1" href="#" class="store-card"><img src="img/store1.png" alt="Tienda 1"></a>
-      <a data-link="tienda-2" href="#" class="store-card"><img src="img/store2.png" alt="Tienda 2"></a>
-      <a data-link="tienda-3" href="#" class="store-card"><img src="img/store3.png" alt="Tienda 3"></a>
-      <a data-link="tienda-4" href="#" class="store-card"><img src="img/store4.png" alt="Tienda 4"></a>
-      <a data-link="tienda-5" href="#" class="store-card"><img src="img/store5.png" alt="Tienda 5"></a>
-      <a data-link="tienda-6" href="#" class="store-card"><img src="img/store6.png" alt="Tienda 6"></a>
-    </div>
-    <button class="carousel-btn" onclick="doScroll('stores', 220)" aria-label="Siguiente">
-      <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
-    </button>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     BANNERS DE DESCUENTO — 3 banners (ej. cuotas, bancos)
-     • Cambiar src de cada imagen (tamaño recomendado: 460×372px)
-     • Para usar 2 banners, quitar un .discount-card
-     ═══════════════════════════════════════════════════════════ -->
-<div class="section section--no-top section--bottom-lg">
-  <div class="discount-grid">
-    <a data-link="promo-1" href="#" class="discount-card"><img src="img/promo1.png" alt="Promo 1"></a>
-    <a data-link="promo-2" href="#" class="discount-card"><img src="img/promo2.png" alt="Promo 2"></a>
-    <a data-link="promo-3" href="#" class="discount-card"><img src="img/promo3.png" alt="Promo 3"></a>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════
-     FOOTER
-     • Logo: cambiar src (mismo logo que header)
-     • Columnas de links: cambiar textos en links.js
-     • Trust badge: cambiar título y descripción
-     • Botón de arrepentimiento: requerido por ley; cambiar URL en links.js
-     ═══════════════════════════════════════════════════════════ -->
-<footer>
-  <div class="footer-inner">
-
-    <!-- Logo + Redes sociales -->
-    <div class="footer-col footer-col--logo">
-      <div class="footer-logo-wrap">
-        <!-- TEMPLATE: Mismo logo que el header -->
-        <img src="img/logo.png" class="footer-logo" alt="Market by Personal">
-      </div>
-      <div class="footer-socials">
-        <a data-link="facebook" href="#" class="social-btn" aria-label="Facebook">
-          <i class="ph-fill ph-facebook-logo" aria-hidden="true"></i>
-        </a>
-        <a data-link="instagram" href="#" class="social-btn" aria-label="Instagram">
-          <i class="ph-fill ph-instagram-logo" aria-hidden="true"></i>
-        </a>
-        <a data-link="twitter" href="#" class="social-btn" aria-label="X / Twitter">
-          <i class="ph-fill ph-x-logo" aria-hidden="true"></i>
-        </a>
-        <a data-link="whatsapp" href="#" class="social-btn" aria-label="WhatsApp">
-          <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
-        </a>
-        <a data-link="youtube" href="#" class="social-btn" aria-label="YouTube">
-          <i class="ph-fill ph-youtube-logo" aria-hidden="true"></i>
-        </a>
-        <a data-link="linkedin" href="#" class="social-btn" aria-label="LinkedIn">
-          <i class="ph-fill ph-linkedin-logo" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- TEMPLATE: Cambiar textos y URLs en links.js -->
-    <div class="footer-col-group">
-      <div class="footer-col">
-        <p class="footer-col-title">Ayuda</p>
-        <div class="footer-col-links">
-          <a data-link="privacidad" href="#">Política de privacidad</a>
-          <a data-link="faq" href="#">Preguntas Frecuentes</a>
-          <a data-link="terminos" href="#">Términos y condiciones</a>
-          <a data-link="datos-personales" href="#">Protección de datos personales</a>
-          <a data-link="consumidor" href="#">Defensa del Consumidor</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <p class="footer-col-title">Accesos directos</p>
-        <div class="footer-col-links">
-          <a data-link="pedidos" href="#">Pedidos</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Trust badge + Botón de arrepentimiento -->
-    <div class="footer-col footer-col--trust">
-      <div class="trust-box">
-        <div class="trust-shield">
-          <i class="ph ph-shield" aria-hidden="true"></i>
-        </div>
+  <div class="section section--no-top">
+    <div class="sports-card">
+      <!-- TEMPLATE: Cambiar imagen (recomendado: proporción 1:1 o 4:3) -->
+      <div class="sports-img"><img src="img/sports.png" alt="Deporte"></div>
+      <div class="sports-content">
         <div>
-          <!-- TEMPLATE: Cambiar título y descripción del trust badge -->
-          <span class="footer-col-title trust-badge">Tienda Oficial</span>
-          <p class="trust-text">Compras seguras, con el respaldo de tu banco</p>
+          <!-- TEMPLATE: Cambiar título y descripción -->
+          <p class="sports-title">Encontrá todos los artículos de deporte al mejor precio</p>
+          <p class="sports-desc">Más de 400 locales adheridos con ofertas exclusivas en indumentaria, calzado,
+            accesorios y equipamiento deportivo.</p>
+        </div>
+        <!-- TEMPLATE: Cambiar texto del botón -->
+        <a data-link="ver-oferta" href="#" class="sports-cta">Ver oferta</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     TIENDAS OFICIALES — Carousel 
+     ═══════════════════════════════════════════════════════════ -->
+  <div class="section section--no-top">
+    <div class="section-header">
+      <!-- Título y texto del link -->
+      <span class="section-title">Tiendas Oficiales</span>
+      <a data-link="mostrar-todo" href="#" class="section-link">Mostrar todo</a>
+    </div>
+    <div class="carousel-wrap">
+      <button class="carousel-btn carousel-btn--prev" onclick="doScroll('stores', -220)" aria-label="Anterior">
+        <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+      </button>
+      <div class="carousel-track scrollbar-hide" id="stores">
+        <a data-link="tienda-1" href="#" class="store-card"><img src="img/store1.png" alt="Tienda 1"></a>
+        <a data-link="tienda-2" href="#" class="store-card"><img src="img/store2.png" alt="Tienda 2"></a>
+        <a data-link="tienda-3" href="#" class="store-card"><img src="img/store3.png" alt="Tienda 3"></a>
+        <a data-link="tienda-4" href="#" class="store-card"><img src="img/store4.png" alt="Tienda 4"></a>
+        <a data-link="tienda-5" href="#" class="store-card"><img src="img/store5.png" alt="Tienda 5"></a>
+        <a data-link="tienda-6" href="#" class="store-card"><img src="img/store6.png" alt="Tienda 6"></a>
+      </div>
+      <button class="carousel-btn" onclick="doScroll('stores', 220)" aria-label="Siguiente">
+        <i class="ph-bold ph-caret-right" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     BANNERS DE DESCUENTO 
+     ═══════════════════════════════════════════════════════════ -->
+  <div class="section section--no-top section--bottom-lg">
+    <div class="discount-grid">
+      <a data-link="promo-1" href="#" class="discount-card"><img src="img/promo1.png" alt="Promo 1"></a>
+      <a data-link="promo-2" href="#" class="discount-card"><img src="img/promo2.png" alt="Promo 2"></a>
+      <a data-link="promo-3" href="#" class="discount-card"><img src="img/promo3.png" alt="Promo 3"></a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+
+      <!-- Logo + Redes sociales -->
+      <div class="footer-col footer-col--logo">
+        <div class="footer-logo-wrap">
+          <a data-link="logo"><img src="img/logo.png" class="footer-logo" alt="Market by Personal"></a>
+        </div>
+        <div class="footer-socials">
+          <a data-link="facebook" href="#" class="social-btn" aria-label="Facebook">
+            <i class="ph-fill ph-facebook-logo" aria-hidden="true"></i>
+          </a>
+          <a data-link="instagram" href="#" class="social-btn" aria-label="Instagram">
+            <i class="ph-fill ph-instagram-logo" aria-hidden="true"></i>
+          </a>
+          <a data-link="twitter" href="#" class="social-btn" aria-label="X / Twitter">
+            <i class="ph-fill ph-x-logo" aria-hidden="true"></i>
+          </a>
+          <a data-link="whatsapp" href="#" class="social-btn" aria-label="WhatsApp">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+          </a>
+          <a data-link="youtube" href="#" class="social-btn" aria-label="YouTube">
+            <i class="ph-fill ph-youtube-logo" aria-hidden="true"></i>
+          </a>
+          <a data-link="linkedin" href="#" class="social-btn" aria-label="LinkedIn">
+            <i class="ph-fill ph-linkedin-logo" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
-      <!-- TEMPLATE: URL configurada en links.js → 'arrepentimiento' -->
-      <a data-link="arrepentimiento" href="#" class="btn-regret">Botón de arrepentimiento</a>
-    </div>
 
-  </div>
-</footer>
+      <!-- Links -->
+      <div class="footer-col-group">
+        <div class="footer-col">
+          <p class="footer-col-title">Ayuda</p>
+          <div class="footer-col-links">
+            <a data-link="privacidad" href="#">Política de privacidad</a>
+            <a data-link="faq" href="#">Preguntas Frecuentes</a>
+            <a data-link="terminos" href="#">Términos y condiciones</a>
+            <a data-link="datos-personales" href="#">Protección de datos personales</a>
+            <a data-link="consumidor" href="#">Defensa del Consumidor</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-title">Accesos directos</p>
+          <div class="footer-col-links">
+            <a data-link="pedidos" href="#">Pedidos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tienda oficial + Botón de arrepentimiento -->
+      <div class="footer-col footer-col--trust">
+        <div class="trust-box">
+          <div class="trust-shield">
+            <i class="ph ph-shield" aria-hidden="true"></i>
+          </div>
+          <div>
+            <!-- Título y descripción de la tienda -->
+            <span class="footer-col-title trust-badge">Tienda Oficial</span>
+            <p class="trust-text">Compras seguras, con el respaldo de tu banco</p>
+          </div>
+        </div>
+        <a data-link="arrepentimiento" href="#" class="btn-regret">Botón de arrepentimiento</a>
+      </div>
+
+    </div>
+  </footer>
 
 </body>
+
 </html>

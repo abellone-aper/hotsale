@@ -1,23 +1,5 @@
-/* ============================================================
-   TEMPLATE — Configuración del comportamiento dinámico
-   Modificá las constantes de cada sección para personalizar
-   la página sin tocar la lógica.
-   ============================================================ */
-
-
 /* ────────────────────────────────────────────────────────────
-   ADBAR — Tira animada de beneficios (loop infinito real)
-   ────────────────────────────────────────────────────────────
-   El enfoque de -33.333% CSS falla en pantallas anchas porque
-   3 ítems pueden ser más angostos que el viewport, dejando un
-   hueco visible al final del ciclo.
-
-   Solución: medir el ancho real de una copia (después de que
-   las fuentes de íconos carguen), duplicar hasta cubrir ≥ 2×
-   el viewport, y animar con píxeles exactos.
-
-   TEMPLATE: Mapa de nombre → clase de Phosphor Icons.
-   Ver íconos en https://phosphoricons.com (peso "regular").
+   Tira animada de beneficios
    ──────────────────────────────────────────────────────────── */
 const iconClass = {
   hotsale: 'ph-seal-percent',
@@ -25,7 +7,7 @@ const iconClass = {
   envios:  'ph-truck',
 };
 
-/* TEMPLATE: Cambiar íconos y textos del adbar aquí. */
+/* Cambiar íconos y textos del adbar */
 const baseItems = [
   { icon: 'hotsale', text: 'Hot Sale 2026' },
   { icon: 'ofertas', text: 'Mejores ofertas' },

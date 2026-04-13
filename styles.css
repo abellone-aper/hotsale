@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* ============================================================
-   TEMPLATE — Variables de personalización
-   Modificá solo esta sección para cambiar colores, tipografía,
-   espaciado y bordes sin tocar nada más del archivo.
+   Variables de personalización
    ============================================================ */
 :root {
   /* -- Colores de marca ------------------------------------ */
@@ -36,7 +34,7 @@
      --font-family: 'Inter', sans-serif; */
   --font-family:         'Roboto', sans-serif;
 
-  /* Escala de tamaños — modificar aquí para ajustar toda la página */
+  /* Escala de tamaños */
   --fs-xs:      12px;   /* etiquetas pequeñas, meta info (seller, tax, badge) */
   --fs-sm:      13px;   /* info secundaria (cuotas, envío, precio original) */
   --fs-base:    14px;   /* cuerpo de texto (nombre producto, trust) */
@@ -83,7 +81,6 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 /* ============================================================
    HEADER
-   Barra superior con logo y acción secundaria.
    ============================================================ */
 .header       { background: var(--color-header-bg); width: 100%; }
 .header-inner {
@@ -100,9 +97,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 
 /* ============================================================
-   ADBAR
-   Tira animada de beneficios que se mueve en loop.
-   Los ítems se generan desde script.js → baseItems[].
+   BENEFICIOS
    ============================================================ */
 .adbar       {
   background: var(--color-bg-subtle);
@@ -111,8 +106,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
   width: 100%;
   padding: 8px 0;
 }
-/* La animación se inicia desde script.js una vez medido el ancho real
-   (--marquee-dist se setea como píxeles exactos = ancho de 1 copia). */
+   /* ANIMACIÓN */
 .adbar-track { display: inline-flex; white-space: nowrap; }
 .adbar-item  { display: flex; align-items: center; gap: 8px; padding: 0 24px; flex-shrink: 0; }
 .adbar-item span { color: var(--color-primary); font-weight: 500; font-size: var(--fs-ui); }
@@ -124,8 +118,6 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 /* ============================================================
    HERO
-   Sección principal con texto a la izquierda e imagen a la derecha.
-   .hero-inner limita el ancho máximo manteniendo el fondo full-width.
    ============================================================ */
 .hero        { background: var(--color-bg); width: 100%; display: flex; justify-content: center; min-height: 400px; height: 546px; }
 .hero-inner  { display: flex; width: 100%; max-width: 1440px; }
@@ -148,9 +140,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 
 /* ============================================================
-   PHOSPHOR ICONS — Tamaños contextuales
-   Los íconos se incluyen vía CDN en el <head>.
-   Cambiar font-size para ajustar el tamaño del ícono.
+   PHOSPHOR ICONS 
    ============================================================ */
 .hero-date i    { font-size: var(--fs-2xl); color: var(--color-text); flex-shrink: 0; }
 .adbar-item i   { font-size: var(--fs-2xl); color: var(--color-primary); flex-shrink: 0; }
@@ -161,8 +151,6 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 /* ============================================================
    COUNTDOWN
-   Cuenta regresiva hacia la fecha del evento.
-   La fecha se configura en script.js → TARGET_DATE.
    ============================================================ */
 .countdown      {
   background: var(--color-bg);
@@ -184,12 +172,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 
 /* ============================================================
-   SECCIONES (contenedores de contenido)
-   .section es el wrapper base para cada bloque de contenido.
-   Modificadores de padding:
-     .section--no-top     → sin padding superior (para agrupar secciones)
-     .section--no-bottom  → sin padding inferior
-     .section--bottom-lg  → padding inferior mayor (cierre de bloque)
+   SECCIONES 
    ============================================================ */
 .section {
   width: 100%;
@@ -210,8 +193,6 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 /* ============================================================
    BANNERS PROMO
-   Grilla de 2 banners rectangulares (ej. descuentos destacados).
-   Reemplazá img/banner1.png y img/banner2.png con tus imágenes.
    ============================================================ */
 .promo-grid { display: flex; gap: 18px; }
 .promo-card         { flex: 1; position: relative; border-radius: var(--radius-banner); overflow: hidden; height: 372px; cursor: pointer; }
@@ -221,9 +202,6 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 /* ============================================================
    CAROUSEL
-   Márgenes negativos = ancho del botón (32px) + gap (16px) = 48px.
-   Esto hace que los botones sobresalgan del área de padding de la
-   .section mientras el track queda alineado con el resto del contenido.
    ============================================================ */
 .carousel-wrap  { display: flex; align-items: center; gap: 16px; margin-left: -48px; margin-right: -48px; position: relative; }
 .carousel-track { display: flex; gap: 16px; overflow-x: auto; flex: 1; }
@@ -268,9 +246,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 
 /* ============================================================
-   TARJETAS DE CATEGORÍA
-   Tarjetas con imagen y etiqueta para el carousel de categorías.
-   Agregar/quitar .cat-card en el HTML para cambiar categorías.
+   CARD CATEGORÍA
    ============================================================ */
 .cat-card       { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-card); display: flex; align-items: center; overflow: hidden; cursor: pointer; flex-shrink: 0; width: 270px; transition: box-shadow .2s; }
 @media (hover: hover) { .cat-card:hover { box-shadow: var(--shadow-card); } }
@@ -280,11 +256,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 
 /* ============================================================
-   TARJETAS DE PRODUCTO
-   Tarjetas con imagen, badge (entre imagen y precio), precio,
-   cuotas, nombre y vendedor.
-   Usar .prod-price-row + .prod-discount + .prod-original para
-   mostrar precio con descuento.
+   CARD PRODUCTO
    ============================================================ */
 .prod-card          { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-card); display: flex; flex-direction: column; overflow: hidden; flex-shrink: 0; width: 260px; transition: box-shadow .2s; color: inherit; }
 @media (hover: hover) { .prod-card:hover { box-shadow: var(--shadow-card); } }
@@ -311,9 +283,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 
 /* ============================================================
-   SPORTS CARD (card editorial / destacado)
-   Bloque con imagen a la izquierda y texto + CTA a la derecha.
-   Se puede reutilizar para cualquier categoría destacada.
+   SPORTS CARD 
    ============================================================ */
 .sports-card    { background: var(--color-bg); border-radius: var(--radius-card); overflow: hidden; display: flex; min-height: 316px; }
 .sports-img     { flex: 1; position: relative; }
@@ -326,9 +296,7 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 
 /* ============================================================
-   TARJETAS DE TIENDA OFICIAL
-   Tarjetas con logo de tienda para el carousel de tiendas.
-   Agregar/quitar .store-card en el HTML para cambiar tiendas.
+   CARD TIENDA OFICIAL
    ============================================================ */
 .store-card       { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-card); display: flex; align-items: center; justify-content: center; padding: 20px; min-width: 176px; height: 136px; flex-shrink: 0; cursor: pointer; transition: box-shadow .2s; }
 @media (hover: hover) { .store-card:hover { box-shadow: var(--shadow-card); } }
@@ -337,8 +305,6 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 /* ============================================================
    BANNERS DE DESCUENTO
-   Grilla de 3 banners (ej. bancos, cuotas, promociones).
-   Reemplazá img/promo1.png, promo2.png, promo3.png.
    ============================================================ */
 .discount-grid { display: flex; gap: 16px; height: 372px; }
 .discount-card           { flex: 1; position: relative; border-radius: var(--radius-banner); overflow: hidden; cursor: pointer; }
@@ -348,9 +314,6 @@ button  { cursor: pointer; border: none; font-family: inherit; }
 
 /* ============================================================
    FOOTER
-   El padding vive en .footer-inner (como en .header-inner y .section)
-   para que el contenido se alinee con el resto de la página en
-   viewports superiores a 1440px.
    ============================================================ */
 footer        { background: var(--color-footer-bg); color: var(--color-bg); width: 100%; }
 .footer-inner {
@@ -394,7 +357,6 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
 
 /* ============================================================
    RESPONSIVE — Tablet (≤1100px)
-   Reduce padding horizontal y permite que el footer se envuelva.
    ============================================================ */
 @media (max-width: 1100px) {
   .header-inner,
@@ -402,11 +364,7 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
   .footer-inner { padding-left: 24px; padding-right: 24px; }
   .hero-left    { padding-left: 24px; }
 
-  /* Con padding reducido a 24px, los 48px de margen negativo del carousel
-     siguen cabiendo (los botones quedan a 24-48 = dentro de la pantalla
-     con overflow-x: hidden en body) */
-
-  /* Footer: permite que las columnas se envuelvan en 2 filas */
+  /* Footer */
   .footer-inner       { flex-wrap: wrap; gap: 32px; }
   .footer-col--logo   { width: 100%; max-width: 100%; }   /* logo ocupa fila propia */
   .footer-col--trust  { margin-left: auto; }              /* trust badge al final */
@@ -414,10 +372,9 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
 
 /* ============================================================
    RESPONSIVE — Mobile (≤768px)
-   Apila elementos en columna, ajusta tipografía y alturas.
    ============================================================ */
 @media (max-width: 768px) {
-  /* Hero: columna, imagen debajo del texto, contenido centrado */
+  /* Hero */
   .hero          { height: auto; }
   .hero-inner    { flex-direction: column; }
   .hero-left     { padding: 32px 16px; align-items: flex-start; }
@@ -450,16 +407,14 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
   .carousel-wrap::before { left: -16px; width: 48px; }
   .carousel-wrap::after  { right: -16px; width: 48px; }
 
-  /* Banners: columna. Promo muestra la imagen a su proporción natural
-     (sin cropping). Discount mantiene altura fija porque suelen ser
-     imágenes más altas que anchas. */
+  /* Banners */
   .promo-grid,
   .discount-grid    { flex-direction: column; height: auto; }
   .promo-card       { height: auto; }
   .promo-card img   { position: static; width: 100%; height: auto; object-fit: initial; }
   .discount-card    { height: 420px; flex: none; }
 
-  /* Card editorial: columna, imagen arriba */
+  /* Card Sports */
   .sports-card    { flex-direction: column; }
   .sports-img     { min-height: 240px; }
   .sports-content { padding: 24px 0; }  /* sin padding horizontal: el .section ya provee los 16px */
@@ -469,7 +424,7 @@ footer        { background: var(--color-footer-bg); color: var(--color-bg); widt
   /* Header */
   .header-btn   { font-size: var(--fs-sm); }
 
-  /* Footer: columna única; trust badge sube al principio */
+  /* Footer */
   .footer-inner       { flex-direction: column; flex-wrap: nowrap; padding: 40px 16px; }
   .footer-col--logo   { width: auto; }
   .footer-col--trust  { margin-left: 0; order: -1; flex: none; width: 100%; max-width: none; }
