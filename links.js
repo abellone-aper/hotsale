@@ -6,7 +6,7 @@ const LINKS = {
 
   /* Header */
   'logo':     'https://market.personal.com.ar/',   
-  'ingresar': '#',  
+  'ir-tienda': 'https://market.personal.com.ar/',  
 
   /* Hero */
   'comprar-ahora': '#',   
