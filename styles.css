@@ -11,6 +11,8 @@
    /* hover de botones primarios */
    --color-promo: #3c009f;
    /* badge de promociones (ej. Con Visa y Master) */
+   --color-success: #00a650;
+   /* badge de descuento y texto de envío gratis */
 
    /* -- Colores de UI -------------------------------------- */
    --color-text: #222;
@@ -65,7 +67,7 @@
    /* -- Espaciado ------------------------------------------ */
    --spacing-h: 140px;
    /* padding horizontal de secciones */
-   --spacing-section-v: 48px;
+   --spacing-section-v: 64px;
    /* padding vertical de secciones */
 
    /* -- Bordes redondeados --------------------------------- */
@@ -158,6 +160,7 @@ button {
 
 .header-btn:hover {
    background: var(--color-primary);
+   color: var(--color-white);
 }
 
 
@@ -190,6 +193,13 @@ button {
    color: var(--color-primary);
    font-weight: 500;
    font-size: var(--fs-ui);
+}
+
+/* Icon */
+.adbar-item i {
+   font-size: var(--fs-2xl);
+   color: var(--color-primary);
+   flex-shrink: 0;
 }
 
 @keyframes marquee {
@@ -244,6 +254,13 @@ button {
    font-size: var(--fs-xl);
 }
 
+/* Icon */
+.hero-date i {
+   font-size: var(--fs-2xl);
+   color: var(--color-text);
+   flex-shrink: 0;
+}
+
 .hero-title {
    color: var(--color-text);
    font-size: var(--fs-hero);
@@ -270,7 +287,6 @@ button {
    background: var(--color-primary-hover);
 }
 
-/* La imagen ocupa todo el espacio del contenedor con posición absoluta */
 .hero-right {
    flex: 1;
    position: relative;
@@ -283,37 +299,6 @@ button {
    width: 100%;
    height: 100%;
    object-fit: cover;
-}
-
-
-/* ============================================================
-   PHOSPHOR ICONS 
-   ============================================================ */
-.hero-date i {
-   font-size: var(--fs-2xl);
-   color: var(--color-text);
-   flex-shrink: 0;
-}
-
-.adbar-item i {
-   font-size: var(--fs-2xl);
-   color: var(--color-primary);
-   flex-shrink: 0;
-}
-
-.carousel-btn i {
-   font-size: var(--fs-base);
-   color: var(--color-primary);
-}
-
-.social-btn i {
-   font-size: var(--fs-lg);
-   color: var(--color-white);
-}
-
-.trust-shield i {
-   font-size: 26px;
-   color: var(--color-white);
 }
 
 
@@ -529,6 +514,12 @@ button {
    background: var(--color-bg-subtle);
 }
 
+/* Icon */
+.carousel-btn i {
+   font-size: var(--fs-base);
+   color: var(--color-primary);
+}
+
 /* El ícono apunta a la derecha (→) por defecto; --prev lo voltea a (←) */
 .carousel-btn--prev i {
    display: inline-block;
@@ -625,10 +616,9 @@ button {
    display: block;
 }
 
-/* Badge va entre la imagen y el cuerpo; align-self evita que se estire en el flex column */
 .prod-badge {
    background: var(--color-promo);
-   color: #fff;
+   color: var(--color-white);
    font-size: var(--fs-xs);
    font-weight: 600;
    padding: 5px 12px;
@@ -660,8 +650,8 @@ button {
 }
 
 .prod-discount {
-   background: #00a650;
-   color: #fff;
+   background: var(--color-success);
+   color: var(--color-white);
    font-size: var(--fs-xs);
    font-weight: 600;
    padding: 2px 6px;
@@ -687,7 +677,7 @@ button {
 .prod-shipping {
    font-size: var(--fs-sm);
    font-weight: 500;
-   color: #00a650;
+   color: var(--color-success);
    margin-top: 8px;
 }
 
@@ -707,6 +697,7 @@ button {
 
 .prod-seller-name {
    color: var(--color-primary);
+   font-weight: 500;
 }
 
 .prod-tax {
@@ -919,6 +910,12 @@ footer {
    background: var(--color-primary);
 }
 
+/* Icon */
+.social-btn i {
+   font-size: var(--fs-lg);
+   color: var(--color-white);
+}
+
 /* Columnas de links */
 .footer-col {
    display: flex;
@@ -969,6 +966,12 @@ footer {
    align-items: center;
    justify-content: center;
    flex-shrink: 0;
+}
+
+/* Icon */
+.trust-shield i {
+   font-size: 26px;
+   color: var(--color-white);
 }
 
 .trust-badge {
