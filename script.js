@@ -9,7 +9,7 @@ const iconClass = {
 
 /* Cambiar íconos y textos del adbar */
 const baseItems = [
-  { icon: 'hotsale', text: 'Hot Sale 2026' },
+  { icon: 'hotsale', text: 'Cyber Monday 2026' },
   { icon: 'ofertas', text: 'Mejores ofertas' },
   { icon: 'envios',  text: 'Envíos gratis' },
 ];
@@ -115,7 +115,7 @@ document.querySelectorAll('.carousel-wrap').forEach(wrap => {
    del evento en formato ISO 8601: 'AAAA-MM-DDTHH:MM:SS'.
    Cuando el contador llega a 0 se detiene (no muestra negativos).
    ──────────────────────────────────────────────────────────── */
-const TARGET_DATE = new Date('2026-05-12T00:00:00'); // ← TEMPLATE: cambiar fecha
+const TARGET_DATE = new Date('2026-11-02T00:00:00'); // ← TEMPLATE: cambiar fecha
 
 /* Cacheamos las referencias al DOM una sola vez para no buscarlas en cada tick */
 const cdDays  = document.getElementById('cdDays');
